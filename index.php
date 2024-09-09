@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +14,17 @@
     <header>
         <div class="header-content">
             <h1>INTERACTIEVE TECHNOLOGIE VOOR HET ONDERWIJS</h1>
-            <input type="search" id="searchInput" placeholder="Zoeken..." onkeyup="filterImages()">
+            <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
+            <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+            <form method="POST" action="logout.php" style="display: inline;">
+                <button type="submit">Logout</button>
+            </form>
+        <?php else: ?>
             <div class="buttons">
-                <button>login</button>
-                <button>login</button>
+                <button onclick="window.location.href='php/login.php'">Login</button>
+                <button onclick="window.location.href='php/register.php'">Register</button>
             </div>
+        <?php endif; ?>
         </div>
     </header>
 
