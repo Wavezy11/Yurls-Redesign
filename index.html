@@ -3,252 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactie Technologie voor het Onderwijs</title>
     <link rel="stylesheet" href="css/index.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            height: 15vh;
-            width: 100%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #9AD5FC;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 0 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #search {
-            width: 300px;
-            height: 40px;
-            border-radius: 5px;
-            border: none;
-            padding: 0 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        #search:focus {
-            outline: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        #login, #register {
-            width: 100px;
-            height: 40px;
-            border-radius: 5px;
-            border: none;
-            background-color: #005F99;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #login:hover, #register:hover {
-            background-color: #003F66;
-        }
-
-        #container {
-            margin-top: 15vh;
-            height: 75vh;
-            width: 100%;
-        }
-
-        #school {
-            border: 1px solid black;
-            width: 100%;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .schooltext {
-            font-size: 1.2rem;
-            margin: 0;
-        }
-
-        #Schoolonderwerpen {
-            height: 20vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            background-color: #f1f1f1;
-            padding: 0 20px;
-        }
-
-        .slideshow-container {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .slide {
-            min-width: 20%;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .icon-container {
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        #images {
-            height: 80px;
-            width: 80px;
-        }
-
-        #texts {
-            margin-top: 5px;
-        }
-
-        .arrow {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #005F99;
-            color: white;
-            border-radius: 50%;
-            font-size: 24px;
-            border: none;
-            transition: background-color 0.3s ease;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        .arrow:hover {
-            background-color: #003F66;
-        }
-
-        .arrow:first-of-type {
-            left: 10px;
-        }
-
-        .arrow:last-of-type {
-            right: 10px;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <input type="search" id="search" name="gsearch">
-        <button id="login">Login</button>
-        <button id="register">Register</button>
-    </header>
-
-    <div id="container">
-        <div id="school">
-            <p class="schooltext">School</p>
-        </div>
-        <div id="Schoolonderwerpen">
-            <div class="slideshow-container">
-                <button class="arrow" onclick="previousSlide()">&#10094;</button>
-        
-                <div class="slide active">
-                    <div class="icon-container">
-                        <img src="img/CKV.png" alt="CKV" id="images">
-                        <p id="texts">CKV</p>
-                    </div>
-                </div>
-        
-                <div class="slide">
-                    <div class="icon-container">
-                        <img src="img/techniek.png" alt="Techniek" id="images">
-                        <p id="texts">Techniek</p>
-                    </div>
-                </div>
-        
-                <div class="slide">
-                    <div class="icon-container">
-                        <img src="img/Talen.png" alt="Talen" id="images">
-                        <p id="texts">Talen</p>
-                    </div>
-                </div>
-        
-                <div class="slide">
-                    <div class="icon-container">
-                        <img src="img/mm.png" alt="M&M" id="images">
-                        <p id="texts">M&M</p>
-                    </div>
-                </div>
-        
-                <div class="slide">
-                    <div class="icon-container">
-                        <img src="img/biologie.png" alt="Biologie" id="images">
-                        <p id="texts">Biologie</p>
-                    </div>
-                </div>
-        
-                <div class="slide">
-                    <div class="icon-container">
-                        <img src="img/economie.png" alt="Economie" id="images">
-                        <p id="texts">Economie</p>
-                    </div>
-                </div>
-        
-                <div class="slide">
-                    <div class="icon-container">
-                        <img src="img/CKV.png" alt="CKV" id="images">
-                        <p>M&M</p>
-                    </div>
-                </div>
-        
-                <button class="arrow" onclick="nextSlide()">&#10095;</button>
+        <div class="header-content">
+            <h1>INTERACTIEVE TECHNOLOGIE VOOR HET ONDERWIJS</h1>
+            <input type="search" placeholder="Zoeken...">
+            <div class="buttons">
+                <button>login</button>
+                <button>login</button>
             </div>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <section class="category">
+            <h2>School</h2>
+            <div class="slideshow-container">
+                <button class="arrow left-arrow" onclick="previousSlide('school')">&#10094;</button>
+                <div class="slide" id="school">
+                    <div class="image-container">
+                        <img src="img/biologie.png" alt="Biologie">
+                        <p>Biologie</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/CKV.png" alt="CKV">
+                        <p>CKV</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/economie.png" alt="Economie">
+                        <p>Economie</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/gym.png" alt="GYM">
+                        <p>GYM</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/mm.png" alt="Mens & Maatschappij">
+                        <p>Mens & Maatschappij</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/scheikunde.png" alt="Scheikunde">
+                        <p>Scheikunde</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/Talen.png" alt="Talen">
+                        <p>Talen</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/techniek.png" alt="Techniek">
+                        <p>Techniek</p>
+                    </div>
+                </div>
+                <button class="arrow right-arrow" onclick="nextSlide('school')">&#10095;</button>
+            </div>
+        </section>
+        <section class="category">
+            <h2>ICT</h2>
+            <div class="slideshow-container">
+                <button class="arrow left-arrow" onclick="previousSlide('school')">&#10094;</button>
+                <div class="slide" id="school">
+                    <div class="image-container">
+                        <img src="img/biologie.png" alt="Biologie">
+                        <p>Biologie</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/CKV.png" alt="CKV">
+                        <p>CKV</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/economie.png" alt="Economie">
+                        <p>Economie</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/gym.png" alt="GYM">
+                        <p>GYM</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/mm.png" alt="Mens & Maatschappij">
+                        <p>Mens & Maatschappij</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/scheikunde.png" alt="Scheikunde">
+                        <p>Scheikunde</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/Talen.png" alt="Talen">
+                        <p>Talen</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/techniek.png" alt="Techniek">
+                        <p>Techniek</p>
+                    </div>
+                </div>
+                <button class="arrow right-arrow" onclick="nextSlide('school')">&#10095;</button>
+            </div>
+        </section>
+        <section class="category">
+            <h2>Overig</h2>
+            <div class="slideshow-container">
+                <button class="arrow left-arrow" onclick="previousSlide('school')">&#10094;</button>
+                <div class="slide" id="school">
+                    <div class="image-container">
+                        <img src="img/biologie.png" alt="Biologie">
+                        <p>Biologie</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/CKV.png" alt="CKV">
+                        <p>CKV</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/economie.png" alt="Economie">
+                        <p>Economie</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/gym.png" alt="GYM">
+                        <p>GYM</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/mm.png" alt="Mens & Maatschappij">
+                        <p>Mens & Maatschappij</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/scheikunde.png" alt="Scheikunde">
+                        <p>Scheikunde</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/Talen.png" alt="Talen">
+                        <p>Talen</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="img/techniek.png" alt="Techniek">
+                        <p>Techniek</p>
+                    </div>
+                </div>
+                <button class="arrow right-arrow" onclick="nextSlide('school')">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Yurls.net</p>
+            <p>Privacy keuzes aanpassen</p>
+            <p>Privacy en gebruikersvoorwaarden</p>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">RSS</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        const slidesPerView = 5;
-
-        function showSlide(index) {
-            const containerWidth = document.querySelector('.slideshow-container').offsetWidth;
-            const slideWidth = containerWidth / slidesPerView;
-            slides.forEach((slide, i) => {
-                slide.style.transform = `translateX(-${index * slideWidth}px)`;
-            });
+        function nextSlide(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollBy({ left: 120, behavior: 'smooth' });
         }
 
-        function nextSlide() {
-            if (currentSlideIndex < totalSlides - slidesPerView) {
-                currentSlideIndex++;
-            } else {
-                currentSlideIndex = 0;
-            }
-            showSlide(currentSlideIndex);
+        function previousSlide(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollBy({ left: -120, behavior: 'smooth' });
         }
-
-        function previousSlide() {
-            if (currentSlideIndex > 0) {
-                currentSlideIndex--;
-            } else {
-                currentSlideIndex = totalSlides - slidesPerView;
-            }
-            showSlide(currentSlideIndex);
-        }
-
-        // Initialize with the first set of slides
-        showSlide(currentSlideIndex);
     </script>
 </body>
 </html>
