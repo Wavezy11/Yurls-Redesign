@@ -1,3 +1,8 @@
+/* Basisstijl */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,6 +27,7 @@ header {
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 40%;
+    max-width: 300px; /* Ensure input doesn't get too wide on large screens */
 }
 
 .buttons {
@@ -32,12 +38,13 @@ header {
 
 .buttons button {
     margin-left: 10px;
-    padding: 10px;
+    padding: 12px; /* Increased padding */
     border: none;
     border-radius: 5px;
     background-color: #005F99;
     color: white;
     cursor: pointer;
+    font-size: 1rem; /* Ensure text is readable */
 }
 
 main {
@@ -62,10 +69,10 @@ main {
 .slideshow-container {
     display: flex;
     align-items: center;
-    gap: 1500px;
+    gap: 20px; /* Adjust gap for responsiveness */
     justify-content: space-between;
     position: relative;
-    left: 10vw;
+    left: 0; /* Center alignment */
 }
 
 .slide {
@@ -79,6 +86,8 @@ main {
     text-align: center;
     margin: 0 10px;
     width: 125px;
+    left: 10vw;
+    position: relative;
 }
 
 .image-container img {
@@ -139,7 +148,7 @@ main {
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
     border: 1px solid #005F99; /* Border color matching theme */
-    width: 60%; /* Adjust width as needed */
+    width: 80%; /* Adjust width as needed */
     max-width: 600px; /* Maximum width for larger screens */
 }
 
@@ -181,4 +190,64 @@ main {
 .close:focus {
     color: #003d66; /* Darker shade for hover/focus */
     text-decoration: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content input[type="search"] {
+        width: 80%; /* Make search input full width on small screens */
+    }
+
+    .header-content h1 {
+        font-size: 1.2rem; /* Adjust size for smaller screens */
+    }
+
+    .slideshow-container {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    .image-container {
+        width: 100px; /* Smaller image containers on smaller screens */
+    }
+
+    .modal-content {
+        width: 90%; /* Increase modal width on smaller screens */
+        margin: 5% auto; /* Adjust margin for better visibility */
+    }
+
+    .modal h2 {
+        font-size: 1.2rem; /* Slightly smaller title on smaller screens */
+    }
+
+    .buttons {
+        position: static; /* Make buttons stack vertically if needed */
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        display: block;
+        width: 100%; /* Full width buttons on small screens */
+        margin-bottom: 10px; /* Space between buttons */
+        font-size: 0.9rem; /* Slightly smaller text for very small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content input[type="search"] {
+        width: 100%; /* Full width search input on very small screens */
+    }
+
+    .image-container {
+        width: 80px; /* Even smaller on very small screens */
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: none; /* Remove max-width restriction for very small screens */
+    }
+
+    .modal h2 {
+        font-size: 1rem; /* Smaller title on very small screens */
+    }
 }
