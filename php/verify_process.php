@@ -1,41 +1,40 @@
 <?php
-session_start();
+   session_start();
+   $servername = "localhost";
+   $username = "root";
+   $password = "";
+   $dbname = "pit";
+   $conn = new mysqli($servername, $username, $password, $dbname);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pit";
+   if ($conn->connect_error) {
+       die("Connection failed: " . $conn->connect_error);
+   }
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       $email = $_POST['email']; // Get email from the login form
+       $password_input = $_POST['password']; // Get password from the login form
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+       // Prepare the SQL statement to prevent SQL injection
+       $sql = "SELECT * FROM users WHERE email = ?";
+       $stmt = $conn->prepare($sql);
+       $stmt->bind_param("s", $email);
+       $stmt->execute();
+       $result = $stmt->get_result();
+       $user_data = $result->fetch_assoc();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $twofa_code = $_POST['twofa_code'];
-    $email = $_SESSION['email'];
-
-    $sql = "SELECT * FROM users WHERE email = ? AND twofa_code = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $email, $twofa_code);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user_data = $result->fetch_assoc();
-
-    if ($user_data) {
-        $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $user_data['username'];
-
-        // Clear 2FA code
-        $update_sql = "UPDATE users SET twofa_code = NULL, verified = 1 WHERE email = ?";
-        $update_stmt = $conn->prepare($update_sql);
-        $update_stmt->bind_param("s", $email);
-        $update_stmt->execute();
-
-        header("Location: index.php");
-    } else {
-        echo "Invalid 2FA code";
-    }
-}
-?>
+       // Check if user exists and verify password
+       if ($user_data && password_verify($password_input, $user_data['password'])) {
+           $_SESSION['loggedin'] = true;
+           $_SESSION['username'] = $user_data['username'];
+           // Clear 2FA code and mark as verified
+           $update_sql = "UPDATE users SET twofa_code = NULL, verified = 1 WHERE email = ?";
+           $update_stmt = $conn->prepare($update_sql);
+           $update_stmt->bind_param("s", $email);
+           $update_stmt->execute();
+           header("Location: index.php");
+           exit();
+       } else {
+           echo "Invalid email or password.";
+       }
+   }
+   ?>

@@ -1,22 +1,27 @@
 <?php
 session_start();
-require 'PHPMailer/PHPMailerAutoload.php'; // Make sure you have PHPMailer included
 
+// Database connection parameters
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "pit";
 
+// Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get email and password from the POST request
     $email = $_POST['email'];
-    $pass = $_POST['password'];
+    $password_input = $_POST['password'];
 
+    // Prepare the SQL statement to prevent SQL injection
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
@@ -24,40 +29,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
     $user_data = $result->fetch_assoc();
 
-    if ($user_data && password_verify($pass, $user_data['password'])) {
-        if ($user_data['verified'] == 0) {
-            $twofa_code = rand(100000, 999999);
-            $update_sql = "UPDATE users SET twofa_code = ? WHERE email = ?";
-            $update_stmt = $conn->prepare($update_sql);
-            $update_stmt->bind_param("ss", $twofa_code, $email);
-            $update_stmt->execute();
+    // Check if user exists and verify password
+    if ($user_data && password_verify($password_input, $user_data['password'])) {
+        // Set session variables for logged-in user
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $user_data['username'];
 
-            // Send email with 2FA code
-            $mail = new PHPMailer;
-            $mail->isSMTP();
-            $mail->Host = 'smtp-mail.outlook.com'; // Use your SMTP server
-            $mail->SMTPAuth = true;
-            $mail->Username = 'halamadriddd231@outlook.com'; // Your email
-            $mail->Password = 'Viscabarca15'; // Your email password
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+        // Optional: Clear any 2FA code if applicable
+        $update_sql = "UPDATE users SET twofa_code = NULL, verified = 1 WHERE email = ?";
+        $update_stmt = $conn->prepare($update_sql);
+        $update_stmt->bind_param("s", $email);
+        $update_stmt->execute();
 
-            $mail->setFrom('Halamadriddd231@outlook.com', 'hala madrid');
-            $mail->addAddress($email);
-            $mail->Subject = 'Your 2FA Code';
-            $mail->Body    = "Your 2FA code is: $twofa_code\n\nPlease enter this code to complete your login.";
-            $mail->isHTML(true);
-            $mail->send();
-
-            $_SESSION['email'] = $email;
-            header("Location: verify_2fa.php");
-        } else {
-            $_SESSION['loggedin'] = true;
-            $_SESSION['username'] = $user_data['username'];
-            header("Location: index.php");
-        }
+        // Redirect to the index page or another page
+        header("Location: ../index.php");
+        exit();
     } else {
-        echo "Invalid email or password";
+        // Invalid email or password
+        echo "Invalid email or password.";
     }
+} else {
+    // If not a POST request, redirect or show an error
+    echo "Invalid request method.";
 }
+
+// Close the connection
+$conn->close();
 ?>

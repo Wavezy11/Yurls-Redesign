@@ -7,16 +7,16 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactie Technologie voor het Onderwijs</title>
+    <title>Practoraat Interactie Technologie voor het Onderwijs</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>INTERACTIEVE TECHNOLOGIE VOOR HET ONDERWIJS</h1>
+            <h1>PRACTORAAT INTERACTIEVE TECHNOLOGIE</h1>
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
             <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
-            <form method="POST" action="logout.php" style="display: inline;">
+            <form method="POST" action="php/logout.php" style="display: inline;">
                 <button type="submit">Logout</button>
             </form>
         <?php else: ?>
