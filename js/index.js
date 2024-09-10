@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const links = {
             "Biologie": [
-                {text: "Biologie Basis", url: "https://example.com/biologie-basis"},
+                {text: "AR - HoloAnatomy DEMO (EN) - HoloLens2", url: "https://www.microsoft.com/nl-nl/p/holoanatomy-demo/9p51d9mb58bh?activetab=pivot:overviewtab"},
                 {text: "Biologie Geavanceerd", url: "https://example.com/biologie-geavanceerd"}
             ],
             "CKV": [
@@ -140,4 +140,69 @@ document.addEventListener("DOMContentLoaded", function() {
             modal.style.display = "none"; // Verberg de modal
         }
     }
+});function changeLanguage(language) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[language][key]) {
+            el.textContent = translations[language][key];
+        }
+    });
+
+    // Toggle button states
+    document.getElementById('nlButton').classList.toggle('active', language === 'nl');
+    document.getElementById('enButton').classList.toggle('active', language === 'en');
+}
+
+// Simple translations object
+const translations = {
+    nl: {
+        title: 'Practoraat Interactieve Technologie',
+        welcome: 'Welkom',
+        school: 'School',
+        ict: 'ICT',
+        overig: 'Overig',
+        modalTitle: 'Vakken Links',
+        biologie: 'Biologie',
+        ckv: 'CKV',
+        economie: 'Economie',
+        gym: 'GYM',
+        mensEnMaatschappij: 'Mens & Maatschappij',
+        scheikunde: 'Scheikunde',
+        talen: 'Talen',
+        techniek: 'Techniek',
+        softskills: 'Softskills',
+        kennismakingVR: 'Kennismaking VR',
+        websiteIconen: 'Website Iconen',
+        gamefication: 'Gamefication',
+        digitaleGeleerdheid: 'Digitale Geleerdheid',
+        verschilARVRMR: 'Verschil AR, VR, MR'
+    },
+    en: {
+        title: 'Institute of Interactive Technology',
+        welcome: 'Welcome',
+        school: 'School',
+        ict: 'ICT',
+        overig: 'Other',
+        modalTitle: 'Subject Links',
+        biologie: 'Biology',
+        ckv: 'CKV',
+        economie: 'Economics',
+        gym: 'GYM',
+        mensEnMaatschappij: 'People & Society',
+        scheikunde: 'Chemistry',
+        talen: 'Languages',
+        techniek: 'Technology',
+        softskills: 'Softskills',
+        kennismakingVR: 'Introduction to VR',
+        websiteIconen: 'Website Icons',
+        gamefication: 'Gamification',
+        digitaleGeleerdheid: 'Digital Literacy',
+        verschilARVRMR: 'Difference AR, VR, MR'
+    }
+};
+
+// Optionally initialize language on page load
+document.addEventListener('DOMContentLoaded', () => {
+    changeLanguage('nl'); // Default language
 });

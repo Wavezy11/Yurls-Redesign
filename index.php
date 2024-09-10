@@ -13,150 +13,148 @@ session_start();
 <body>
     <header>
         <div class="header-content">
-            <h1>PRACTORAAT INTERACTIEVE TECHNOLOGIE</h1>
+            <h1 data-i18n="title">PRACTORAAT INTERACTIEVE TECHNOLOGIE</h1>
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
-            <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
-            <form method="POST" action="php/logout.php" style="display: inline;">
-                <button type="submit">Logout</button>
-            </form>
-        <?php else: ?>
-            <div class="buttons">
-                <button onclick="window.location.href='php/login.php'">Login</button>
-                <button onclick="window.location.href='php/register.php'">Register</button>
+                <p data-i18n="welcome">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+                <form method="POST" action="php/logout.php" style="display: inline;">
+                    <button type="submit">Logout</button>
+                </form>
+            <?php else: ?>
+                <div class="buttons">
+                    <button onclick="window.location.href='php/login.php'">Login</button>
+                    <button onclick="window.location.href='php/register.php'">Register</button>
+                </div>
+            <?php endif; ?>
+            <div class="language-buttons">
+                <button id="nlButton" class="language-button active" onclick="changeLanguage('nl')">NL</button>
+                <button id="enButton" class="language-button" onclick="changeLanguage('en')">EN</button>
             </div>
-        <?php endif; ?>
-        <input type="search" id="searchInput" oninput="filterImages()" placeholder="Search...">
+
+            <input type="search" id="searchInput" oninput="filterImages()" placeholder="Search...">
         </div>
     </header>
 
     <main>
         <section class="category">
-            <h2>School</h2>
+            <h2 data-i18n="school">School</h2>
             <div class="slideshow-container">         
                 <div class="slide" id="school">
                     <div class="image-container">
                         <img src="img/biologie.png" alt="Biologie">
-                        <p>Biologie</p>
+                        <p data-i18n="biologie">Biologie</p>
                     </div>
                     <div class="image-container">
                         <img src="img/CKV.png" alt="CKV">
-                        <p>CKV</p>
+                        <p data-i18n="ckv">CKV</p>
                     </div>
                     <div class="image-container">
                         <img src="img/economie.png" alt="Economie">
-                        <p>Economie</p>
+                        <p data-i18n="economie">Economie</p>
                     </div>
                     <div class="image-container">
                         <img src="img/gym.png" alt="GYM">
-                        <p>GYM</p>
+                        <p data-i18n="gym">GYM</p>
                     </div>
                     <div class="image-container">
                         <img src="img/mm.png" alt="Mens & Maatschappij">
-                        <p>Mens & Maatschappij</p>
+                        <p data-i18n="mensEnMaatschappij">Mens & Maatschappij</p>
                     </div>
                     <div class="image-container">
                         <img src="img/scheikunde.png" alt="Scheikunde">
-                        <p>Scheikunde</p>
+                        <p data-i18n="scheikunde">Scheikunde</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Talen.png" alt="Talen">
-                        <p>Talen</p>
+                        <p data-i18n="talen">Talen</p>
                     </div>
                     <div class="image-container">
                         <img src="img/techniek.png" alt="Techniek">
-                        <p>Techniek</p>
+                        <p data-i18n="techniek">Techniek</p>
                     </div>
                 </div>
-               
             </div>
         </section>
 
         <section class="category">
-            <h2>ICT</h2>
+            <h2 data-i18n="ict">ICT</h2>
             <div class="slideshow-container">
-              
                 <div class="slide" id="ict">
                     <div class="image-container">
                         <img src="img/ICT.png" alt="ICT">
-                        <p>ICT</p>
+                        <p data-i18n="ict">ICT</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Skills.png" alt="Softskills">
-                        <p>Softskills</p>
+                        <p data-i18n="softskills">Softskills</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Kennismaking VR.png" alt="Kennismaking VR">
-                        <p>Kennismaking VR</p>
+                        <p data-i18n="kennismakingVR">Kennismaking VR</p>
                     </div>
                     <div class="image-container">
                         <img src="img/websiteiconen.png" alt="Website Iconen">
-                        <p>Website Iconen</p>
+                        <p data-i18n="websiteIconen">Website Iconen</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Gamefication.png" alt="Gamefication">
-                        <p>Gamefication</p>
+                        <p data-i18n="gamefication">Gamefication</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Digitale Geleerdheid.png" alt="Digitale Geleerdheid">
-                        <p>Digitale Geleerdheid</p>
+                        <p data-i18n="digitaleGeleerdheid">Digitale Geleerdheid</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Verschil .png" alt="Verschil AR, VR, MR">
-                        <p>Verschil AR, VR, MR</p>
+                        <p data-i18n="verschilARVRMR">Verschil AR, VR, MR</p>
                     </div>
                 </div>
-               
             </div>
         </section>
 
         <section class="category">
-            <h2>Overig</h2>
+            <h2 data-i18n="overig">Overig</h2>
             <div class="slideshow-container">
-              
                 <div class="slide" id="overig">
                     <div class="image-container">
                         <img src="img/biologie.png" alt="Biologie">
-                        <p>Biologie</p>
+                        <p data-i18n="biologie">Biologie</p>
                     </div>
                     <div class="image-container">
                         <img src="img/CKV.png" alt="CKV">
-                        <p>CKV</p>
+                        <p data-i18n="ckv">CKV</p>
                     </div>
                     <div class="image-container">
                         <img src="img/economie.png" alt="Economie">
-                        <p>Economie</p>
+                        <p data-i18n="economie">Economie</p>
                     </div>
                     <div class="image-container">
                         <img src="img/gym.png" alt="GYM">
-                        <p>GYM</p>
+                        <p data-i18n="gym">GYM</p>
                     </div>
                     <div class="image-container">
                         <img src="img/mm.png" alt="Mens & Maatschappij">
-                        <p>Mens & Maatschappij</p>
+                        <p data-i18n="mensEnMaatschappij">Mens & Maatschappij</p>
                     </div>
                     <div class="image-container">
                         <img src="img/scheikunde.png" alt="Scheikunde">
-                        <p>Scheikunde</p>
+                        <p data-i18n="scheikunde">Scheikunde</p>
                     </div>
                     <div class="image-container">
                         <img src="img/Talen.png" alt="Talen">
-                        <p>Talen</p>
+                        <p data-i18n="talen">Talen</p>
                     </div>
                     <div class="image-container">
                         <img src="img/techniek.png" alt="Techniek">
-                        <p>Techniek</p>
+                        <p data-i18n="techniek">Techniek</p>
                     </div>
                 </div>
-           
             </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 Yurls.net</p>
-            <p>Privacy keuzes aanpassen</p>
-            <p>Privacy en gebruikersvoorwaarden</p>
+            <p>&copy; 2024 Practoraat Interactieve Technologie</p>
             <div class="footer-links">
                 <a href="#">Contact</a>
                 <a href="#">Disclaimer</a>
@@ -165,16 +163,16 @@ session_start();
         </div>
     </footer>
 
-
     <div id="popupModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Vakken Links</h2>
-        <ul id="linksList">
-            <!-- Dynamische links worden hier toegevoegd -->
-        </ul>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 data-i18n="modalTitle">Vakken Links</h2>
+            <ul id="linksList">
+               >
+            </ul>
+        </div>
     </div>
-</div>
-<script src="js/index.js"></script>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

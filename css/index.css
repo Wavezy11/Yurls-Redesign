@@ -59,11 +59,15 @@ main {
 
 .category h2 {
     margin-bottom: 50px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
     border: 1px solid black;
+    background-color: #9AD5FC;
     height: 35px;
     width: 100%;
+
+    color: white;
+
 }
 
 .slideshow-container {
@@ -250,4 +254,24 @@ main {
     .modal h2 {
         font-size: 1rem; /* Smaller title on very small screens */
     }
+}
+.language-buttons {
+    margin-bottom: 20px;
+}
+
+.language-button {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.language-button.active {
+    background-color: green;
+}
+
+.language-button.inactive {
+    background-color: gray;
 }
