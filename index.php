@@ -32,8 +32,7 @@ session_start();
     <main>
         <section class="category">
             <h2>School</h2>
-            <div class="slideshow-container">
-                <button class="arrow left-arrow" onclick="previousSlide('school')">&#10094;</button>
+            <div class="slideshow-container">         
                 <div class="slide" id="school">
                     <div class="image-container">
                         <img src="img/biologie.png" alt="Biologie">
@@ -68,14 +67,14 @@ session_start();
                         <p>Techniek</p>
                     </div>
                 </div>
-                <button class="arrow right-arrow" onclick="nextSlide('school')">&#10095;</button>
+               
             </div>
         </section>
 
         <section class="category">
             <h2>ICT</h2>
             <div class="slideshow-container">
-                <button class="arrow left-arrow" onclick="previousSlide('ict')">&#10094;</button>
+              
                 <div class="slide" id="ict">
                     <div class="image-container">
                         <img src="img/ICT.png" alt="ICT">
@@ -106,14 +105,14 @@ session_start();
                         <p>Verschil AR, VR, MR</p>
                     </div>
                 </div>
-                <button class="arrow right-arrow" onclick="nextSlide('ict')">&#10095;</button>
+               
             </div>
         </section>
 
         <section class="category">
             <h2>Overig</h2>
             <div class="slideshow-container">
-                <button class="arrow left-arrow" onclick="previousSlide('overig')">&#10094;</button>
+              
                 <div class="slide" id="overig">
                     <div class="image-container">
                         <img src="img/biologie.png" alt="Biologie">
@@ -148,7 +147,7 @@ session_start();
                         <p>Techniek</p>
                     </div>
                 </div>
-                <button class="arrow right-arrow" onclick="nextSlide('overig')">&#10095;</button>
+           
             </div>
         </section>
     </main>
