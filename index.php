@@ -25,6 +25,7 @@ session_start();
                 <button onclick="window.location.href='php/register.php'">Register</button>
             </div>
         <?php endif; ?>
+        <input type="search" id="searchInput" oninput="filterImages()" placeholder="Search...">
         </div>
     </header>
 
@@ -165,43 +166,16 @@ session_start();
         </div>
     </footer>
 
-    <script>
-        function nextSlide(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollBy({ left: 120, behavior: 'smooth' });
-        }
 
-        function previousSlide(sectionId) {
-            const section = document.getElementById(sectionId);
-            section.scrollBy({ left: -120, behavior: 'smooth' });
-        }
-
-        function filterImages() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const categories = document.querySelectorAll('.category');
-
-            categories.forEach(category => {
-                const images = category.querySelectorAll('.image-container');
-
-                let categoryHasMatch = false;
-                images.forEach(imageContainer => {
-                    const caption = imageContainer.querySelector('p').innerText.toLowerCase();
-                    if (caption.includes(filter)) {
-                        imageContainer.style.display = '';
-                        categoryHasMatch = true;
-                    } else {
-                        imageContainer.style.display = 'none';
-                    }
-                });
-
-                if (categoryHasMatch) {
-                    category.style.display = '';
-                } else {
-                    category.style.display = 'none';
-                }
-            });
-        }
-    </script>
+    <div id="popupModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Vakken Links</h2>
+        <ul id="linksList">
+            <!-- Dynamische links worden hier toegevoegd -->
+        </ul>
+    </div>
+</div>
+<script src="js/index.js"></script>
 </body>
 </html>
