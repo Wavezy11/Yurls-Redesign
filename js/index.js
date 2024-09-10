@@ -1,45 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Functie om afbeeldingen te filteren op basis van zoekinput
-    function filterImages() {
+    // Functie om divs te filteren op basis van zoekinput
+    function filterSubjects() {
         const input = document.getElementById('searchInput');
         const filter = input.value.toLowerCase();
         const categories = document.querySelectorAll('.category');
-        
+
         categories.forEach(category => {
-            const images = category.querySelectorAll('.image-container');
+            const subjects = category.querySelectorAll('.subject-container');
             let categoryHasMatch = false;
-            
-            images.forEach(imageContainer => {
-                const caption = imageContainer.querySelector('p').innerText.toLowerCase();
-                
+
+            subjects.forEach(subjectContainer => {
+                const caption = subjectContainer.querySelector('p').innerText.toLowerCase();
+
                 if (caption.includes(filter)) {
-                    imageContainer.style.display = ''; // Toon de bijpassende afbeelding
+                    subjectContainer.style.display = ''; // Toon de bijpassende div
                     categoryHasMatch = true;
                 } else {
-                    imageContainer.style.display = 'none'; // Verberg niet-bijpassende afbeelding
+                    subjectContainer.style.display = 'none'; // Verberg niet-bijpassende div
                 }
             });
-            
+
             // Toon of verberg de categorie op basis van matches
             category.style.display = categoryHasMatch ? '' : 'none';
         });
     }
 
-    // Koppel de filterImages functie aan het zoekveld
+    // Koppel de filterSubjects functie aan het zoekveld
     const searchInput = document.getElementById('searchInput');
     if (searchInput) {
-        searchInput.addEventListener('input', filterImages);
+        searchInput.addEventListener('input', filterSubjects);
     }
 
     // Modal functionaliteit
-    const imageContainers = document.querySelectorAll('.image-container');
+    const subjectContainers = document.querySelectorAll('.subject-container');
     const modal = document.getElementById('popupModal');
-    const closeModal = modal.querySelector('.close'); // Zorg ervoor dat het .close element binnen de modal wordt gezocht
+    const closeModal = modal.querySelector('.close');
     const linksList = document.getElementById('linksList');
-    const modalTitle = modal.querySelector('h2'); // Selecteer het h2 element voor de dynamische titel
+    const modalTitle = modal.querySelector('h2');
 
-    imageContainers.forEach(container => {
+    subjectContainers.forEach(container => {
         container.addEventListener('click', () => {
             const subject = container.querySelector('p').innerText.trim();
             showModal(subject);
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function showModal(subject) {
         linksList.innerHTML = '';  // Verwijder eerdere inhoud
-        modalTitle.innerText = `${subject} Links`; // Stel de modal titel in op basis van het geselecteerde vak
+        modalTitle.innerText = `${subject} Links`;
 
         const links = {
             "Biologie": [
@@ -108,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "Virtual Reality", url: "https://example.com/vr"},
                 {text: "Mixed Reality", url: "https://example.com/mr"}
             ]
-            // Voeg hier andere vakken en links toe
         };
 
         if (links[subject]) {
@@ -118,29 +117,28 @@ document.addEventListener("DOMContentLoaded", function() {
                 linksList.appendChild(li);
             });
         } else {
-            // Optioneel: Toon een bericht als er geen links beschikbaar zijn voor het geselecteerde vak
             const li = document.createElement('li');
             li.innerText = "Geen beschikbare links voor dit vak.";
             linksList.appendChild(li);
         }
 
-        modal.style.display = "block"; // Toon de modal
+        modal.style.display = "block";
     }
 
-    // Sluit de modal wanneer op het sluitknopje wordt geklikt
     if (closeModal) {
         closeModal.onclick = function() {
-            modal.style.display = "none"; // Verberg de modal
+            modal.style.display = "none";
         }
     }
 
-    // Sluit de modal wanneer buiten de modal wordt geklikt
     window.onclick = function(event) {
         if (event.target == modal) {
-            modal.style.display = "none"; // Verberg de modal
+            modal.style.display = "none";
         }
     }
-});function changeLanguage(language) {
+});
+
+function changeLanguage(language) {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');

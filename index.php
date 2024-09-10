@@ -35,122 +35,97 @@ session_start();
     </header>
 
     <main>
-        <section class="category">
-            <h2 data-i18n="school">School</h2>
-            <div class="slideshow-container">         
-                <div class="slide" id="school">
-                    <div class="image-container">
-                        <img src="img/biologie.png" alt="Biologie">
-                        <p data-i18n="biologie">Biologie</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/CKV.png" alt="CKV">
-                        <p data-i18n="ckv">CKV</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/economie.png" alt="Economie">
-                        <p data-i18n="economie">Economie</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/gym.png" alt="GYM">
-                        <p data-i18n="gym">GYM</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/mm.png" alt="Mens & Maatschappij">
-                        <p data-i18n="mensEnMaatschappij">Mens & Maatschappij</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/scheikunde.png" alt="Scheikunde">
-                        <p data-i18n="scheikunde">Scheikunde</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Talen.png" alt="Talen">
-                        <p data-i18n="talen">Talen</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/techniek.png" alt="Techniek">
-                        <p data-i18n="techniek">Techniek</p>
-                    </div>
+    <section class="category">
+        <h2 data-i18n="school">School</h2>
+        <div class="slideshow-container">         
+            <div class="slide" id="school">
+                <div class="subject-container">
+                    <p data-i18n="biologie">Biologie</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="ckv">CKV</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="economie">Economie</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="gym">GYM</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="mensEnMaatschappij">Mens & Maatschappij</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="scheikunde">Scheikunde</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="talen">Talen</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="techniek">Techniek</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="category">
-            <h2 data-i18n="ict">ICT</h2>
-            <div class="slideshow-container">
-                <div class="slide" id="ict">
-                    <div class="image-container">
-                        <img src="img/ICT.png" alt="ICT">
-                        <p data-i18n="ict">ICT</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Skills.png" alt="Softskills">
-                        <p data-i18n="softskills">Softskills</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Kennismaking VR.png" alt="Kennismaking VR">
-                        <p data-i18n="kennismakingVR">Kennismaking VR</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/websiteiconen.png" alt="Website Iconen">
-                        <p data-i18n="websiteIconen">Website Iconen</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Gamefication.png" alt="Gamefication">
-                        <p data-i18n="gamefication">Gamefication</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Digitale Geleerdheid.png" alt="Digitale Geleerdheid">
-                        <p data-i18n="digitaleGeleerdheid">Digitale Geleerdheid</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Verschil .png" alt="Verschil AR, VR, MR">
-                        <p data-i18n="verschilARVRMR">Verschil AR, VR, MR</p>
-                    </div>
+    <section class="category">
+        <h2 data-i18n="ict">ICT</h2>
+        <div class="slideshow-container">
+            <div class="slide" id="ict">
+                <div class="subject-container">
+                    <p data-i18n="ict">ICT</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="softskills">Softskills</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="kennismakingVR">Kennismaking VR</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="websiteIconen">Website Iconen</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="gamefication">Gamefication</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="digitaleGeleerdheid">Digitale Geleerdheid</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="verschilARVRMR">Verschil AR, VR, MR</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="category">
-            <h2 data-i18n="overig">Overig</h2>
-            <div class="slideshow-container">
-                <div class="slide" id="overig">
-                    <div class="image-container">
-                        <img src="img/biologie.png" alt="Biologie">
-                        <p data-i18n="biologie">Biologie</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/CKV.png" alt="CKV">
-                        <p data-i18n="ckv">CKV</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/economie.png" alt="Economie">
-                        <p data-i18n="economie">Economie</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/gym.png" alt="GYM">
-                        <p data-i18n="gym">GYM</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/mm.png" alt="Mens & Maatschappij">
-                        <p data-i18n="mensEnMaatschappij">Mens & Maatschappij</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/scheikunde.png" alt="Scheikunde">
-                        <p data-i18n="scheikunde">Scheikunde</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/Talen.png" alt="Talen">
-                        <p data-i18n="talen">Talen</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="img/techniek.png" alt="Techniek">
-                        <p data-i18n="techniek">Techniek</p>
-                    </div>
+    
+    <section class="category">
+        <h2 data-i18n="overig">Overig</h2>
+        <div class="slideshow-container">
+            <div class="slide" id="Overig">
+                <div class="subject-container">
+                    <p data-i18n="Meerdere vakken">Meerdere vakken</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="Verzorging">Verzorging</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="Horeca">Horeca</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="Berroepsssgericht">Berroepsgericht</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="Muziek">Muziek</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="Cursessen">Cursessen</p>
+                </div>
+                <div class="subject-container">
+                    <p data-i18n="Spelgebasseerd leren">Spelgebasseerd leren</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
     <footer>
         <div class="footer-content">

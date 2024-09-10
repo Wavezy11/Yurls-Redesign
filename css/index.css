@@ -1,55 +1,99 @@
 /* Basisstijl */
-* {
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 header {
-    background-color: #9AD5FC;
-    padding: 20px;
-    text-align: center;
-    position: relative;
+    height: 16vh;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    background-color: #d1e0e0; /* Match met vorige project */
 }
 
-.header-content h1 {
+header .header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+header .header-content h1 {
     margin: 0;
     font-size: 1.5rem;
+    flex-grow: 1; /* Zorgt ervoor dat de titel ruimte krijgt */
 }
 
-.header-content input[type="search"] {
-    margin-top: 10px;
+header .header-content input[type="search"] {
+    margin-left: 20px;
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
     width: 40%;
-    max-width: 300px; /* Ensure input doesn't get too wide on large screens */
+    max-width: 300px;
+}
+
+.header-content .language-buttons {
+    margin-left: 20px;
+}
+
+.language-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.language-button {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+    background-color: gray; /* Default state */
+    transition: background-color 0.3s ease;
+}
+
+.language-button.active {
+    background-color: green;
+}
+
+.language-button.inactive {
+    background-color: gray;
 }
 
 .buttons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .buttons button {
     margin-left: 10px;
-    padding: 12px; /* Increased padding */
+    padding: 12px;
     border: none;
     border-radius: 5px;
-    background-color: #005F99;
+    background-color: #007bff; /* Match met vorige project */
     color: white;
     cursor: pointer;
-    font-size: 1rem; /* Ensure text is readable */
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #0056b3; /* Match met vorige project */
 }
 
 main {
     padding: 20px;
-    background-color: #f1f1f1;
+    background-color: #FAF9F6; /* Match met vorige project */
 }
 
 .category {
@@ -62,27 +106,53 @@ main {
     font-size: 1.4rem;
     text-align: center;
     border: 1px solid black;
-    background-color: #9AD5FC;
+    background-color: #d1e0e0; /* Match met vorige project */
     height: 35px;
     width: 100%;
-
-    color: white;
-
+    color: black; /* Text color to contrast with background */
 }
 
 .slideshow-container {
     display: flex;
     align-items: center;
-    gap: 20px; /* Adjust gap for responsiveness */
+    gap: 20px;
     justify-content: space-between;
     position: relative;
-    left: 0; /* Center alignment */
+    left: 0;
 }
 
 .slide {
     display: flex;
     overflow: hidden;
     width: 100%;
+    gap: 30px;
+    left: 20px;
+    position: relative;
+}
+
+.subject-container {
+    width: 125px;
+    height: 125px;
+    background-color: #d1e0e0; /* Match met vorige project */
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: background-color 0.4s ease;
+}
+
+.subject-container p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.subject-container:hover {
+    background-color: #a1c1c1; /* Hover effect matching previous project */
 }
 
 .image-container {
@@ -108,7 +178,7 @@ main {
 }
 
 .arrow {
-    background-color: #005F99;
+    background-color: #007bff; /* Match met vorige project */
     color: white;
     border: none;
     padding: 10px;
@@ -118,7 +188,7 @@ main {
 }
 
 .footer-content {
-    background-color: #9AD5FC;
+    background-color: #d1e0e0; /* Match met vorige project */
     padding: 20px;
     text-align: center;
     font-size: 0.8rem;
@@ -127,7 +197,7 @@ main {
 .footer-links a {
     margin: 0 10px;
     text-decoration: none;
-    color: #005F99;
+    color: black;
 }
 
 .footer-links a:hover {
@@ -147,43 +217,43 @@ main {
 }
 
 .modal-content {
-    background-color: #ffffff; /* White background */
+    background-color: #d1e0e0; /* Match met vorige project */
     margin: 10% auto; /* Centered with margin from top */
     padding: 20px;
-    border-radius: 10px; /* Rounded corners */
-    border: 1px solid #005F99; /* Border color matching theme */
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Maximum width for larger screens */
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Match with previous project */
+    width: 80%;
+    max-width: 600px;
 }
 
 .modal h2 {
     font-size: 1.5rem;
-    color: #005F99; /* Title color matching theme */
+    color: black; /* Title color matching theme */
     margin-top: 0;
     margin-bottom: 20px;
 }
 
 .modal ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding: 0;
 }
 
 .modal li {
-    margin-bottom: 10px; /* Space between links */
+    margin-bottom: 10px;
 }
 
 .modal a {
-    text-decoration: none; /* Remove underline */
-    color: #005F99; /* Link color matching theme */
-    font-size: 1.1rem; /* Slightly larger text for readability */
+    text-decoration: none;
+    color: #007bff; /* Match met vorige project */
+    font-size: 1.1rem;
 }
 
 .modal a:hover {
-    text-decoration: underline; /* Underline on hover for better UX */
+    text-decoration: underline;
 }
 
 .close {
-    color: #005F99; /* Close button color matching theme */
+    color: black; /* Close button color matching theme */
     float: right;
     font-size: 24px;
     font-weight: bold;
@@ -192,86 +262,75 @@ main {
 
 .close:hover,
 .close:focus {
-    color: #003d66; /* Darker shade for hover/focus */
+    color: #000;
     text-decoration: none;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .header-content input[type="search"] {
-        width: 80%; /* Make search input full width on small screens */
+    header .header-content {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .header-content h1 {
-        font-size: 1.2rem; /* Adjust size for smaller screens */
+    header .header-content h1 {
+        font-size: 1.2rem;
+    }
+
+    header .header-content input[type="search"] {
+        width: 80%;
+    }
+
+    header .header-content .language-buttons {
+        margin-top: 10px;
     }
 
     .slideshow-container {
-        flex-direction: column; /* Stack images vertically on smaller screens */
-        gap: 10px; /* Reduce gap for smaller screens */
+        flex-direction: column;
+        gap: 10px;
     }
 
     .image-container {
-        width: 100px; /* Smaller image containers on smaller screens */
+        width: 100px;
     }
 
     .modal-content {
-        width: 90%; /* Increase modal width on smaller screens */
-        margin: 5% auto; /* Adjust margin for better visibility */
+        width: 90%;
+        margin: 5% auto;
     }
 
     .modal h2 {
-        font-size: 1.2rem; /* Slightly smaller title on smaller screens */
+        font-size: 1.2rem;
     }
 
     .buttons {
-        position: static; /* Make buttons stack vertically if needed */
+        position: static;
         margin-top: 20px;
     }
 
     .buttons button {
         display: block;
-        width: 100%; /* Full width buttons on small screens */
-        margin-bottom: 10px; /* Space between buttons */
-        font-size: 0.9rem; /* Slightly smaller text for very small screens */
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 480px) {
-    .header-content input[type="search"] {
-        width: 100%; /* Full width search input on very small screens */
+    header .header-content input[type="search"] {
+        width: 100%;
     }
 
     .image-container {
-        width: 80px; /* Even smaller on very small screens */
+        width: 80px;
     }
 
     .modal-content {
         width: 95%;
-        max-width: none; /* Remove max-width restriction for very small screens */
+        max-width: none;
     }
 
     .modal h2 {
-        font-size: 1rem; /* Smaller title on very small screens */
+        font-size: 1rem;
     }
-}
-.language-buttons {
-    margin-bottom: 20px;
-}
-
-.language-button {
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 0 5px;
-}
-
-.language-button.active {
-    background-color: green;
-}
-
-.language-button.inactive {
-    background-color: gray;
 }
