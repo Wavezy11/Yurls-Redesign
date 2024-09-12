@@ -34,15 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Set session variables for logged-in user
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $user_data['username'];
+        $_SESSION['admin'] = $user_data['admin']; // Store admin status in session
 
-        // Optional: Clear any 2FA code if applicable
-        $update_sql = "UPDATE users SET twofa_code = NULL, verified = 1 WHERE email = ?";
-        $update_stmt = $conn->prepare($update_sql);
-        $update_stmt->bind_param("s", $email);
-        $update_stmt->execute();
-
-        // Redirect to the index page or another page
-        header("Location: ../index.php");
+        // Redirect based on admin status
+        if ($user_data['admin'] == 1) {
+            header("Location: dashboard.php"); // Redirect to dashboard for admins
+        } else {
+            header("Location: ../index.php"); // Redirect to index page for non-admins
+        }
         exit();
     } else {
         // Invalid email or password
