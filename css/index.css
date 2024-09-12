@@ -2,22 +2,22 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Elegantere font */
     width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 
+/* Header styling voor modernere look */
 header {
     height: 16vh;
     width: 100%;
-    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    box-sizing: border-box;
-    background-color: #d1e0e0; /* Match met vorige project */
+    background-color: #d1e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
 }
 
 header .header-content {
@@ -29,21 +29,19 @@ header .header-content {
 
 header .header-content h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 2rem; /* Grotere titel voor meer impact */
+    color: #333;
     flex-grow: 1; /* Zorgt ervoor dat de titel ruimte krijgt */
 }
 
 header .header-content input[type="search"] {
     margin-left: 20px;
-    padding: 8px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 8px;
     border: 1px solid #ccc;
     width: 40%;
     max-width: 300px;
-}
-
-.header-content .language-buttons {
-    margin-left: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schaduw aan zoekbalk */
 }
 
 .language-buttons {
@@ -66,29 +64,25 @@ header .header-content input[type="search"] {
     background-color: green;
 }
 
-.language-button.inactive {
-    background-color: gray;
-}
-
 .buttons {
     display: flex;
     align-items: center;
 }
 
 .buttons button {
-    margin-left: 10px;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff; /* Match met vorige project */
+    padding: 12px 20px;
+    background-color: #007bff;
     color: white;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
 }
 
 .buttons button:hover {
-    background-color: #0056b3; /* Match met vorige project */
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Subtiele hover-animatie */
 }
 
 main {
@@ -103,13 +97,12 @@ main {
 
 .category h2 {
     margin-bottom: 50px;
-    font-size: 1.4rem;
+    font-size: 1.6rem; /* Grotere sectietitels */
     text-align: center;
-    border: 1px solid black;
     background-color: #d1e0e0; /* Match met vorige project */
-    height: 35px;
-    width: 100%;
-    color: black; /* Text color to contrast with background */
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
 }
 
 .slideshow-container {
@@ -117,8 +110,6 @@ main {
     align-items: center;
     gap: 20px;
     justify-content: space-between;
-    position: relative;
-    left: 0;
 }
 
 .slide {
@@ -126,23 +117,20 @@ main {
     overflow: hidden;
     width: 100%;
     gap: 30px;
-    left: 20px;
-    position: relative;
 }
 
 .subject-container {
-    width: 125px;
-    height: 125px;
+    width: 150px;
+    height: 150px;
     background-color: #d1e0e0; /* Match met vorige project */
     color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 5px;
-    margin: 0 10px;
-    font-size: 20px;
-    transition: background-color 0.4s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Diepere schaduw */
+    transition: all 0.4s ease;
 }
 
 .subject-container p {
@@ -153,6 +141,8 @@ main {
 
 .subject-container:hover {
     background-color: #a1c1c1; /* Hover effect matching previous project */
+    transform: scale(1.05); /* Lichte vergroting bij hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Schaduw wordt intenser */
 }
 
 .image-container {
@@ -160,8 +150,6 @@ main {
     text-align: center;
     margin: 0 10px;
     width: 125px;
-    left: 10vw;
-    position: relative;
 }
 
 .image-container img {
@@ -187,21 +175,28 @@ main {
     font-size: 18px;
 }
 
+.arrow:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Kleine vergroting bij hover */
+}
+
 .footer-content {
     background-color: #d1e0e0; /* Match met vorige project */
     padding: 20px;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Schaduw aan de bovenkant */
 }
 
 .footer-links a {
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
-    color: black;
+    color: #007bff;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+    color: #0056b3;
 }
 
 .modal {

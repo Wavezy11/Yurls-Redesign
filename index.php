@@ -106,7 +106,7 @@ session_start();
         <div class="slideshow-container">
             <div class="slide" id="Overig">
                 <div class="subject-container">
-                    <p data-i18n="Meerdere vakken">Meerdere vakken</p>
+                    <p data-i18n="MeerdereVakken">Meerdere vakken</p>
                 </div>
                 <div class="subject-container">
                     <p data-i18n="Verzorging">Verzorging</p>
@@ -124,7 +124,7 @@ session_start();
                     <p data-i18n="Cursessen">Cursessen</p>
                 </div>
                 <div class="subject-container">
-                    <p data-i18n="Spelgebasseerd leren">Spelgebasseerd leren</p>
+                    <p data-i18n="SpelgebasseerdLeren">Spelgebasseerd leren</p>
                 </div>
                 <div class="subject-container">
                     <p data-i18n="LeukeGYM">Leuke GYM</p>

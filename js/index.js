@@ -238,6 +238,53 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "Virtual Reality", url: "https://example.com/vr"},
                 {text: "Mixed Reality", url: "https://example.com/mr"}
             ],
+
+            "Meerdere vakken": [
+                {text: "VR - StellarX (EN) [VR editor] ", url: "https://www.oculus.com/experiences/quest/8132958546745663/?utm_source=sidequest"},
+                {text: "VR / AR - Fectar [Verschillende interactieve lessen] ", url: "https://www.fectar.com/use-cases/education/"},
+                {text: "Serious gaming - Minecraft Education Editie (NL) ", url: "https://education.minecraft.net/nl-nl/resources/explore-lessons"},
+                {text: "VR - Librarium (EN) [Studievaardigheden, verschillende vakken]  ", url: "https://www.oculus.com/experiences/quest/6291815170892714/?utm_source=www.google.com&utm_medium=oculusredirect"},
+                {text: "VR - Zoe (VR Leerscenes maken) (EN)  ", url: "https://www.meta.com/nl-nl/experiences/5464660053555314/#?"},
+            ],
+            "Verzorging": [
+                {text: "VR - Notes On Blindness (EN) ", url: "https://www.meta.com/nl-nl/experiences/1946326588770583/?ranking_trace=0_1946326588770583_QUESTSEARCH_0chQoznOf1j9PKfrW"},
+                {text: "VR - See What I See: Virtual Reality Eye Disease Experience (EN) ", url: "https://www.nei.nih.gov/learn-about-eye-health/outreach-campaigns-and-resources/see-what-i-see-virtual-reality-eye-disease-experience"},
+                {text: "VR - Barbershop Simulator VR (EN)  ", url: "https://store.steampowered.com/app/2109850/Barbershop_Simulator_VR/"},
+                {text: "VR - Reanimatiesimulator / CPR Simulator (EN)  ", url: "https://www.oculus.com/experiences/quest/5019990081404984/?utm_source=sidequest"},
+                {text: "VR - VR Bieb Zorg Trainingen (NL) - Gratis Demo  ", url: "https://vrbieb.nl/onze-trainingen/"},
+            ],
+            "Horeca": [
+                {text: "VR - Cooking Simulator VR (EN) ", url: "https://store.steampowered.com/app/1358140/Cooking_Simulator_VR/"},
+                {text: "VR - Lost Recipes (EN) ", url: "https://www.meta.com/nl-nl/experiences/lost-recipes/4584847304916084/"},
+            ],
+            "Berroepsssgericht": [
+                {text: "VR - Virtual Skillslab [Hospitality, kassatrainer, warehouse] (NL) Gratis demo ", url: "https://demo.virtualskillslab.com/nl/requestaccount"},
+        
+            ],
+            "Muziek": [
+                {text: "VR - Guitar Strummer (EN) ", url: "https://sidequestvr.com/app/1900/guitar-strummer"},
+                {text: "MR - PianoVision (EN) ", url: "https://www.meta.com/nl-nl/experiences/pianovision/5271074762922599/?utm_source=pianovision.com"},
+                {text: "VR - GrooVR: Air Drumming (EN) ", url: "https://www.oculus.com/experiences/quest/4011466365558046/?utm_source=sidequest"},
+                {text: "VR - Paradiddle [Drummen] (EN) ", url: "https://store.steampowered.com/app/685240/Paradiddle/"},
+                {text: "VR - Tribe XR | DJ in Mixed Reality (EN) ", url: "https://www.oculus.com/experiences/quest/2055718171162796/?utm_source=www.google.com&utm_medium=oculusredirect"},
+                {text: "VR - VRtuos (Echte piano vereist!) (EN) ", url: "https://sidequestvr.com/app/494/vrtuos"},
+            ],
+            "Cursessen": [
+                {text: "De AI-cursus voor Onderwijs ", url: "https://onderwijs.ai-cursus.nl/home"}
+            
+            ],
+            "SpelgebasseerdLeren": [
+                {text: "youtube video", url: "https://www.youtube.com/watch?v=b2uMoWDph3M&embeds_referring_euri=https%3A%2F%2Finteractievetechnologie.yurls.net%2F&source_ve_path=Mjg2NjY"},
+                
+            ],
+            "LeukeGYM": [
+                {text: "VR - Beat Saber (EN), [Ritme] Gratis demo  ", url: "https://www.oculus.com/experiences/quest/1758986534231171/"},
+                {text: "VR - Dance Central (EN) [Dansen] Gratis demo ", url: "https://www.oculus.com/experiences/quest/2444056018972158/?utm_source=www.google.com&utm_medium=oculusredirect"},
+                {text: "VR - Echo VR (EN), [VR frisbee arena] ", url: "https://www.oculus.com/experiences/quest/2215004568539258/?utm_source=rakuten&utm_medium=affiliate&MID=43993&utm_campaign=TnL5HPStwNw-K_xCzndFP7CbF8svtiHnFw&LSNSUBSITE=Omitted_TnL5HPStwNw"},
+                {text: "VR - Gorilla Tag (EN) [VR Tikkertje] ", url: "https://www.oculus.com/experiences/quest/4979055762136823/?utm_source=www.google.com&utm_medium=oculusredirect"},
+                {text: "VR - LES MILLS BODYCOMBAT (EN) [Fitness]", url: "https://www.oculus.com/experiences/quest/4015163475201433/?utm_source=www.google.com&utm_medium=oculusredirect"},
+                {text: "VR - Nock: Bow + Arrow Soccer (EN) [Pijl en boog voetbal] ", url: "https://www.oculus.com/experiences/quest/5157404804284116/?utm_source=www.google.com&utm_medium=oculusredirect"},
+            ],
         };
 
         if (links[subject]) {
@@ -267,6 +314,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+
 
 function changeLanguage(language) {
     const elements = document.querySelectorAll('[data-i18n]');
@@ -305,8 +353,15 @@ const translations = {
         gamefication: 'Gamefication',
         digitaleGeleerdheid: 'Digitale Geleerdheid',
         verschilARVRMR: 'Verschil AR, VR, MR',
-        LeukeGYM: 'Leuke gym'
-    },
+        LeukeGYM: 'Leuke gym,',
+        MeerdereVakken: 'Meerdere vakken',
+        Verzorging: 'Verzorging',
+        Horeca: 'Horeca',
+        Berroepsssgericht: 'Beroepssgericht',
+        Muziek: 'Muziek',
+        Cursessen: 'Cursessen',
+        SpelgebasseerdLeren: 'Spelgebasseerd Leren'
+},
     en: {
         title: 'Institute of Interactive Technology',
         welcome: 'Welcome',
@@ -328,7 +383,14 @@ const translations = {
         gamefication: 'Gamification',
         digitaleGeleerdheid: 'Digital Literacy',
         verschilARVRMR: 'Difference AR, VR, MR',
-        LeukeGYM: 'Fun GYM'
+        LeukeGYM: 'Fun GYM',
+        MeerdereVakken: 'Multiple Subjects',
+        Verzorging: 'Care',
+        Horeca: 'Catering',
+        Berroepsssgericht: 'Job focussed',
+        Muziek: 'Music',
+        Cursessen: 'Courses',
+        SpelgebasseerdLeren: 'Game-based Learning'
     }
 };
 
