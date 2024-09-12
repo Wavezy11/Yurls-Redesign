@@ -14,6 +14,11 @@ session_start();
     <header>
         <div class="header-content">
             <h1 data-i18n="title">PRACTORAAT INTERACTIEVE TECHNOLOGIE</h1>
+            <input type="search" id="searchInput" oninput="filterImages()" placeholder="Search...">
+            <div class="language-buttons">
+                <button id="nlButton" class="language-button active" onclick="changeLanguage('nl')">NL</button>
+                <button id="enButton" class="language-button" onclick="changeLanguage('en')">EN</button>
+            </div>
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
                 <p data-i18n="welcome">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
                 <form method="POST" action="php/logout.php" style="display: inline;">
@@ -25,12 +30,10 @@ session_start();
                     <button onclick="window.location.href='php/register.php'">Register</button>
                 </div>
             <?php endif; ?>
-            <div class="language-buttons">
-                <button id="nlButton" class="language-button active" onclick="changeLanguage('nl')">NL</button>
-                <button id="enButton" class="language-button" onclick="changeLanguage('en')">EN</button>
-            </div>
+                
+          
 
-            <input type="search" id="searchInput" oninput="filterImages()" placeholder="Search...">
+       
         </div>
     </header>
 
@@ -91,6 +94,7 @@ session_start();
                 </div>
                 <div class="subject-container">
                     <p data-i18n="verschilARVRMR">Verschil AR, VR, MR</p>
+                    
                 </div>
             </div>
         </div>
@@ -122,6 +126,10 @@ session_start();
                 <div class="subject-container">
                     <p data-i18n="Spelgebasseerd leren">Spelgebasseerd leren</p>
                 </div>
+                <div class="subject-container">
+                    <p data-i18n="LeukeGYM">Leuke GYM</p>
+                </div>
+               
             </div>
         </div>
     </section>
