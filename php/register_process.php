@@ -12,6 +12,32 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <style>
+   #succes {
+  
+   }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Welkom</h1>
+        </div>
+    </header>
+
+    <main>
+    <div id="succes">
+<?php 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $username = $_POST['username'];
@@ -29,28 +55,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $stmt->error;
     }
 }
+
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <style>
-   
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <h1>Welkom</h1>
-        </div>
-    </header>
-
-    <main>
-    
+</div>
     </main>
 </body>
 </html>

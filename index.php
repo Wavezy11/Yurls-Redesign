@@ -144,7 +144,7 @@ session_start();
    
             <p>&copy; 2024 Practoraat Interactieve Technologie</p>
             <div class="footer-links">
-                <a href="#">Contact</a>
+                <a href="php/contact.php">Contact</a>
                 <a href="#">Disclaimer</a>
                 <a href="#">RSS</a>
         
