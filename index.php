@@ -13,6 +13,10 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practoraat Interactie Technologie voor het Onderwijs</title>
     <link rel="stylesheet" href="css/index.css">
+    <style>
+ 
+
+        </style>
 </head>
 <body>
     <header>
@@ -25,6 +29,7 @@ session_start();
             </div>
             <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']): ?>
                 <p id="welkomtekst" data-i18n="welcome">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+              
                 <form method="POST" action="php/logout.php" style="display: inline;">
                     <button type="submit">Logout</button>
                 </form>

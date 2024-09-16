@@ -253,6 +253,21 @@ main {
     padding: 0;
 }
 
+.admin-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #007bff; /* Knop kleur */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.admin-button:hover {
+    background-color: #0056b3; /* Hover kleur */
+}
+
 .modal li {
     margin-bottom: 10px;
 }

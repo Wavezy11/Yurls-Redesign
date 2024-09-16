@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <header>
         <h1>Edit User</h1>
-        <a href="dashboard.php">Back to Dashboard</a>
+        <a id="href" href="dashboard.php">Back to Dashboard</a>
     </header>
 
     <main>
@@ -90,12 +90,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
 
     <footer>
-        <p>&copy; 2024 Admin Dashboard</p>
+        <p>&copy; 2024 PIT</p>
     </footer>
 </body>
 </html>
 
 <?php
-// Close the connection
+
 $conn->close();
 ?>
