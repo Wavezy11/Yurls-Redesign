@@ -20,7 +20,7 @@
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Register</button>
         </form>
-        <p>Already have an account? <a href="login.php">Login</a></p>
+        <p id="register">Already have an account? <a href="login.php">Login</a></p>
     </main>
 </body>
 </html>

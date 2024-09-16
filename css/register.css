@@ -4,6 +4,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #FAF9F6; /* Match met vorige project */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Header stijl */
@@ -65,10 +68,12 @@ form {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    position: absolute;
+    top: 37vh;
 }
 
 /* Input fields */
@@ -97,6 +102,11 @@ form button:hover {
     background-color: #0056b3; /* Match met vorige project */
 }
 
+
+#register {
+    position: absolute;
+    bottom: 5.6vw;
+}
 /* Text links */
 main p {
     text-align: center;
@@ -117,7 +127,7 @@ main p a:hover {
     background-color: #d1e0e0; /* Match met vorige project */
     padding: 20px;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .footer-links a {

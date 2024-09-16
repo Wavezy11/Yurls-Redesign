@@ -7,6 +7,7 @@ body, html {
     height: 100%;
     box-sizing: border-box;
     
+    
 }
 
 /* Header styling voor modernere look */
@@ -94,6 +95,19 @@ main {
     padding: 20px;
     background-color: #FAF9F6; /* Match met vorige project */
     width: 100%;
+}
+
+#instagram {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 25vw;
+    top: 165vh;
+
+}
+#instagram:hover {
+    transform: scale(1.2); 
+    transition: smooth;
 }
 
 .category {

@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -138,13 +141,15 @@ session_start();
 
     <footer>
         <div class="footer-content">
+   
             <p>&copy; 2024 Practoraat Interactieve Technologie</p>
             <div class="footer-links">
                 <a href="#">Contact</a>
                 <a href="#">Disclaimer</a>
                 <a href="#">RSS</a>
+        
             </div>
-            <img src="img/instagram.svg" id="instagram" alt="instagramfoto">
+           
         </div>
     </footer>
 
