@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+
+require '../../vendor/autoload.php'; // Adjust the number of '../' as needed
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
+
+
 // Check if user is logged in and is an admin
 if (!isset($_SESSION['loggedin']) || $_SESSION['admin'] != 1) {
     header("Location: ../index.php"); // Redirect to index page if not admin
@@ -8,10 +14,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['admin'] != 1) {
 }
 
 // Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "pit";
+$servername = $_ENV['DB_HOST'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
+$dbname = $_ENV['DB_NAME'];
 
 // Create a connection
 $conn = new mysqli($servername, $username, $password, $dbname);

@@ -31,7 +31,9 @@ header .header-content {
 
 #welkomtekst {
     position: absolute;
-    left: 55vw;
+    left: 45vw;
+    width: 10vw;
+
 }
 header .header-content h1 {
     margin: 0;

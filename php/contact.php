@@ -1,8 +1,24 @@
 <?php
+session_start();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 require '../../vendor/autoload.php'; // Zorg ervoor dat je de juiste pad hebt naar autoload.php van Composer
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
+
+$servername = $_ENV['DB_HOST'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASS'];
+$dbname = $_ENV['DB_NAME'];
+
+$host = $_ENV['HOST'];
+$email = $_ENV['EMAIL'];
+$emailpassword = $_ENV['EMAIL_PASSWORD'];
+$port = $_ENV['host'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
@@ -14,17 +30,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Serverinstellingen
         $mail->isSMTP();
-        $mail->Host       = 'smtp-mail.outlook.com'; // Outlook SMTP-server
+        $mail->Host       = $host; // Outlook SMTP-server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'Wavezy.ABA@outlook.com'; // Je e-mail
-        $mail->Password   = 'boom1234'; // App-specifiek wachtwoord
+        $mail->Username   = $email; // Je e-mail
+        $mail->Password   = $emailpassword; // App-specifiek wachtwoord
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+        $mail->Port       = $host;
 
         // Ontvanger
-        $mail->setFrom('Wavezy.ABA@outlook.com', 'PIT');
+        $mail->setFrom($email, 'PIT');
         $mail->addAddress($email); // Ontvanger van de e-mail
-        $mail->addAddress('Wavezy.ABA@outlook.com', 'PIT'); // Voeg je eigen e-mail toe als ontvanger
+        $mail->addAddress($email, 'PIT'); // Voeg je eigen e-mail toe als ontvanger
 
         // Content
         $mail->isHTML(true);
