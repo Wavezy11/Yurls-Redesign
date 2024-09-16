@@ -31,7 +31,7 @@ session_start();
                 <!-- <p id="welkomtekst" data-i18n="welcome">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p> -->
 
                 <form method="POST" action="php/logout.php" style="display: inline;">
-                    <button type="submit">Logout</button>
+                    <button id="logout" type="submit">Logout</button>
                 </form>
             <?php else: ?>
                 <div class="buttons">
