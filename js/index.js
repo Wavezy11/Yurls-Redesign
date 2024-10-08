@@ -1,18 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-
-    // Functie om divs te filteren op basis van zoekinput
+    // Function to filter subjects based on search input
     function filterSubjects() {
         const input = document.getElementById('searchInput');
         const filter = input.value.toLowerCase();
         const categories = document.querySelectorAll('.category');
-
         categories.forEach(category => {
             const subjects = category.querySelectorAll('.subject-container');
             let categoryHasMatch = false;
-
             subjects.forEach(subjectContainer => {
                 const caption = subjectContainer.querySelector('p').innerText.toLowerCase();
-
                 if (caption.includes(filter)) {
                     subjectContainer.style.display = ''; 
                     categoryHasMatch = true;
@@ -20,8 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     subjectContainer.style.display = 'none'; 
                 }
             });
-
-            // Toon of verberg de categorie op basis van matches
+            // Show or hide the category based on matches
             category.style.display = categoryHasMatch ? '' : 'none';
         });
     }
@@ -32,6 +27,32 @@ document.addEventListener("DOMContentLoaded", function() {
         searchInput.addEventListener('input', filterSubjects);
     }
 
+
+
+    
+    // Functie voor de tweede popup
+    function showLinkPopup() {
+        document.getElementById('linkPopupModal').style.display = "flex"; // Voor de linkpopup
+    }
+    
+    // Sluit de modal als de close knop wordt geklikt
+    document.querySelectorAll('.close').forEach(closeBtn => {
+        closeBtn.onclick = function() {
+            closeBtn.closest('.modal').style.display = 'none'; // Sluit de juiste modal
+        }
+    });
+    
+    // Sluit de modal als je buiten de modal klikt
+    window.onclick = function(event) {
+        document.querySelectorAll('.modal').forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+
+    
+    
     // Modal functionaliteit
     const subjectContainers = document.querySelectorAll('.subject-container');
     const modal = document.getElementById('popupModal');
@@ -47,12 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function showModal(subject) {
-        linksList.innerHTML = '';  // Verwijder eerdere inhoud
+        linksList.innerHTML = '';  
         modalTitle.innerText = `${subject} Links`;
 
         const links = {
             "Biologie": [
                 {text: "AR - HoloAnatomy DEMO (EN) - HoloLens2", url: "https://www.microsoft.com/nl-nl/p/holoanatomy-demo/9p51d9mb58bh?activetab=pivot:overviewtab" },
+                
                 {text: "VR- Animal Anatomy Explorer (EN)", url: "https://www.microsoft.com/nl-nl/p/holoanatomy-demo/9p51d9mb58bh?activetab=pivot:overviewtab"},
                 {text: "VR- High School Anatomy (EN)", url: "https://www.meta.com/nl-nl/experiences/high-school-anatomy-for-quest/5556243174447482/?ranking_trace=0_5556243174447482_QUESTSEARCH_4uyhAxOPjXo2tmKlY"},
                 {text: "Polinator Park (EN)", url: "https://www.meta.com/nl-nl/experiences/pollinator-park/3630788480370853/"},
@@ -70,7 +92,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "Ontleed-Simulator: Kat (EN)", url: "https://store.steampowered.com/app/1178570/Dissection_Simulator_Feline_Edition/"},
                 {text: "Ontleed-Simulator: Kikker (EN)", url: "https://www.oculus.com/experiences/quest/3503368656441919/?utm_source=sidequest"},
                 {text: "Ontleed-Simulator: Varken (EN)", url: "https://store.steampowered.com/app/1176080/Dissection_Simulator_Pig_Edition/"},
-                {text: "Out of Scale: A Kurzgesagt Adventure (EN)", url: "https://www.meta.com/nl-nl/experiences/7270665009617359?ranking_trace=0_7270665009617359_QUESTSEARCH_GGXZwp2Kifvfx09sO_eyJwbGF0Zm9ybSI6ImFuZHJvaWQtNmRvZiIsInF1ZXJ5X3N0cmluZyI6ImVkdWNhdGlvbiIsImxvY2FsZSI6Im5sX05MIiwibnVtX2ZldGNoIjoxMSwic2VhcmNoX3JvdXRlIjoid2ViIiwidGFnX2lkcyI6W119_eyJzZWN0aW9uX2tleSI6IlNFQVJDSCJ9"}
+                {text: "Out of Scale: A Kurzgesagt Adventure (EN)", url: "https://www.meta.com/nl-nl/experiences/7270665009617359?ranking_trace=0_7270665009617359_QUESTSEARCH_GGXZwp2Kifvfx09sO_eyJwbGF0Zm9ybSI6ImFuZHJvaWQtNmRvZiIsInF1ZXJ5X3N0cmluZyI6ImVkdWNhdGlvbiIsImxvY2FsZSI6Im5sX05MIiwibnVtX2ZldGNoIjoxMSwic2VhcmNoX3JvdXRlIjoid2ViIiwidGFnX2lkcyI6W119_eyJzZWN0aW9uX2tleSI6IlNFQVJDSCJ9"},
+            
+           
 
             
             ],
@@ -194,6 +218,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "Website - Quizizz Quiz (NL) ", url: "https://quizizz.com/?lng=en"},
                 {text: "App - Seppo (NL, EN)", url: "https://seppo.io/nl/"},
             ],
+            "ICT": [
+                {text: "Game-based-learning - Hardware Tycoon (EN)", url: "https://haxor1337.itch.io/hardware-tycoon"},
+                {text: "Game-based-learning - Hardware Tycoon (EN)", url: "https://seppo.io/nl/"},
+                {text: "App - Seppo (NL, EN)", url: "https://seppo.io/nl/"},
+                {text: "App - Seppo (NL, EN)", url: "https://seppo.io/nl/"},
+                {text: "App - Seppo (NL, EN)", url: "https://seppo.io/nl/"},
+                {text: "App - Seppo (NL, EN)", url: "https://seppo.io/nl/"},
+            ],
             "Digitale Geleerdheid": [
                 {text: "VR 360° Video - Mediagebruik chatten & sexting (NL) ", url: "https://www.podiumvooronderwijs.nl/mediawijzer-vr#:~:text=Met%20360%20graden%20video's%20kijken,het%20lesmateriaal%20zijn%20gratis%20beschikbaar."},
                 {text: "VR 360° Video - Cyberpesten (NL) ", url: "https://www.doe-iets-vr.nl/"}
@@ -257,8 +289,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "VR - Cooking Simulator VR (EN) ", url: "https://store.steampowered.com/app/1358140/Cooking_Simulator_VR/"},
                 {text: "VR - Lost Recipes (EN) ", url: "https://www.meta.com/nl-nl/experiences/lost-recipes/4584847304916084/"},
             ],
-            "Berroepsssgericht": [
-                {text: "VR - Virtual Skillslab [Hospitality, kassatrainer, warehouse] (NL) Gratis demo ", url: "https://demo.virtualskillslab.com/nl/requestaccount"},
+            "Beroepsgericht": [
+                {text: "VR - Virtual Skillslab [Hospitality, kassatrainer, warehouse] (NL) Gratis demo", url: "https://demo.virtualskillslab.com/nl/requestaccount"}
         
             ],
             "Muziek": [
@@ -273,11 +305,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "De AI-cursus voor Onderwijs ", url: "https://onderwijs.ai-cursus.nl/home"}
             
             ],
-            "SpelgebasseerdLeren": [
-                {text: "youtube video", url: "https://www.youtube.com/watch?v=b2uMoWDph3M&embeds_referring_euri=https%3A%2F%2Finteractievetechnologie.yurls.net%2F&source_ve_path=Mjg2NjY"},
+            "Spelgebasseerd Leren": [
+                {text: "Seppo gamification tool met Suzanne Lustenhouwer", url: "https://www.youtube.com/watch?v=b2uMoWDph3M&embeds_referring_euri=https%3A%2F%2Finteractievetechnologie.yurls.net%2F&source_ve_path=Mjg2NjY"},
                 
             ],
-            "LeukeGYM": [
+            "Leuke GYM": [
                 {text: "VR - Beat Saber (EN), [Ritme] Gratis demo  ", url: "https://www.oculus.com/experiences/quest/1758986534231171/"},
                 {text: "VR - Dance Central (EN) [Dansen] Gratis demo ", url: "https://www.oculus.com/experiences/quest/2444056018972158/?utm_source=www.google.com&utm_medium=oculusredirect"},
                 {text: "VR - Echo VR (EN), [VR frisbee arena] ", url: "https://www.oculus.com/experiences/quest/2215004568539258/?utm_source=rakuten&utm_medium=affiliate&MID=43993&utm_campaign=TnL5HPStwNw-K_xCzndFP7CbF8svtiHnFw&LSNSUBSITE=Omitted_TnL5HPStwNw"},
@@ -292,15 +324,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 const li = document.createElement('li');
                 li.innerHTML = `<a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.text}</a>`;
                 linksList.appendChild(li);
+                // Add a line break after each link
+                linksList.appendChild(document.createElement('br'));
+                linksList.appendChild(document.createElement('br'));
             });
         } else {
             const li = document.createElement('li');
             li.innerText = "Geen beschikbare links voor dit vak.";
             linksList.appendChild(li);
         }
-
         modal.style.display = "block";
     }
+
+    if (!localStorage.getItem('modalShown')) {
+        showModal('Cookies'); // Show the modal with a default title
+        localStorage.setItem('modalShown', 'true'); // Set the flag to indicate modal has been shown
+    }
+
+ 
+ 
 
     if (closeModal) {
         closeModal.onclick = function() {
@@ -313,88 +355,4 @@ document.addEventListener("DOMContentLoaded", function() {
             modal.style.display = "none";
         }
     }
-});
-
-
-function changeLanguage(language) {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[language][key]) {
-            el.textContent = translations[language][key];
-        }
-    });
-
-    // Toggle button states
-    document.getElementById('nlButton').classList.toggle('active', language === 'nl');
-    document.getElementById('enButton').classList.toggle('active', language === 'en');
-}
-
-// Simple translations object
-const translations = {
-    nl: {
-        title: 'Practoraat Interactieve Technologie',
-        welcome: 'Welkom',
-        school: 'School',
-        ict: 'ICT',
-        overig: 'Overig',
-        modalTitle: 'Vakken Links',
-        biologie: 'Biologie',
-        ckv: 'CKV',
-        economie: 'Economie',
-        gym: 'GYM',
-        mensEnMaatschappij: 'Mens & Maatschappij',
-        scheikunde: 'Scheikunde',
-        talen: 'Talen',
-        techniek: 'Techniek',
-        softskills: 'Softskills',
-        kennismakingVR: 'Kennismaking VR',
-        websiteIconen: 'Website Iconen',
-        gamefication: 'Gamefication',
-        digitaleGeleerdheid: 'Digitale Geleerdheid',
-        verschilARVRMR: 'Verschil AR, VR, MR',
-        LeukeGYM: 'Leuke gym,',
-        MeerdereVakken: 'Meerdere vakken',
-        Verzorging: 'Verzorging',
-        Horeca: 'Horeca',
-        Berroepsssgericht: 'Beroepssgericht',
-        Muziek: 'Muziek',
-        Cursessen: 'Cursessen',
-        SpelgebasseerdLeren: 'Spelgebasseerd Leren'
-},
-    en: {
-        title: 'Institute of Interactive Technology',
-        welcome: 'Welcome',
-        school: 'School',
-        ict: 'ICT',
-        overig: 'Other',
-        modalTitle: 'Subject Links',
-        biologie: 'Biology',
-        ckv: 'CKV',
-        economie: 'Economics',
-        gym: 'GYM',
-        mensEnMaatschappij: 'People & Society',
-        scheikunde: 'Chemistry',
-        talen: 'Languages',
-        techniek: 'Technology',
-        softskills: 'Softskills',
-        kennismakingVR: 'Introduction to VR',
-        websiteIconen: 'Website Icons',
-        gamefication: 'Gamification',
-        digitaleGeleerdheid: 'Digital Literacy',
-        verschilARVRMR: 'Difference AR, VR, MR',
-        LeukeGYM: 'Fun GYM',
-        MeerdereVakken: 'Multiple Subjects',
-        Verzorging: 'Care',
-        Horeca: 'Catering',
-        Berroepsssgericht: 'Job focussed',
-        Muziek: 'Music',
-        Cursessen: 'Courses',
-        SpelgebasseerdLeren: 'Game-based Learning'
-    }
-};
-
-// Optionally initialize language on page load
-document.addEventListener('DOMContentLoaded', () => {
-    changeLanguage('nl'); // Default language
 });
