@@ -1,386 +1,166 @@
-/* Basisstijl */
+/* Basic Styling */
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif; /* Elegantere font */
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
-    
-    
-}
-
-/* Header styling voor modernere look */
-header {
-    height: 16vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    background-color: #d1e0e0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw voor diepte */
-}
-
-header .header-content {
-    display: flex;
-    align-items: center;
-    width: 96vw;
-    justify-content: space-between;
-}
-
-#welkomtekst {
-    position: absolute;
-    left: 45vw;
-    width: 10vw;
-
-}
-header .header-content h1 {
-    margin: 0;
-    font-size: 2rem; /* Grotere titel voor meer impact */
+    font-family: 'Arial', sans-serif;
+    background-color: #F0F4F8;
     color: #333;
-    flex-grow: 1; /* Zorgt ervoor dat de titel ruimte krijgt */
+    box-sizing: border-box;
 }
 
-header .header-content input[type="search"] {
-    margin-left: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 40%;
-    max-width: 300px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Schaduw aan zoekbalk */
-}
-
-.language-buttons {
+/* Header */
+header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
-}
-
-.language-button {
-    padding: 10px 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 0 5px;
-    background-color: gray; /* Default state */
-    transition: background-color 0.3s ease;
-}
-
-.language-button.active {
-    background-color: green;
-}
-
-.buttons {
-    display: flex;
-    align-items: center;
-}
-
-#logout {
-  
-        padding: 12px 20px;
-        background-color: #007bff;
-        color: white;
-        cursor: pointer;
-        font-size: 1rem;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        margin-left: 10px;
-    
-}
-#logout button:hover {
-   
-        background-color: #0056b3;
-        transform: translateY(-3px); /* Subtiele hover-animatie */
-    
-}
-.buttons button {
-    padding: 12px 20px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    margin-left: 10px;
-}
-
-.buttons button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px); /* Subtiele hover-animatie */
-}
-
-main {
-    padding: 20px;
-    background-color: #FAF9F6; /* Match met vorige project */
-    width: 100%;
-}
-
-#instagram {
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    left: 25vw;
-    top: 165vh;
-
-}
-#instagram:hover {
-    transform: scale(1.2); 
-    transition: smooth;
-}
-
-.category {
-    margin-bottom: 70px;
-    width: 100%;
-}
-
-.category h2 {
-    margin-bottom: 50px;
-    font-size: 1.6rem; /* Grotere sectietitels */
-    text-align: center;
-    background-color: #d1e0e0; /* Match met vorige project */
-    padding: 10px;
-    color: black;
-    border-radius: 5px;
-}
-
-.slideshow-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
     justify-content: space-between;
-}
-
-.slide {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    gap: 30px;
-}
-
-.subject-container {
-    width: 150px;
-    height: 150px;
-    background-color: #d1e0e0; /* Match met vorige project */
-    color: black;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Diepere schaduw */
-    transition: all 0.4s ease;
+}
+header img {
+    width: 120px;
+}
+#searchInput {
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid #d1d1d1;
+    width: 300px;
+}
+#searchInput:focus {
+    border-color: #8F88FD;
+    outline: none;
 }
 
+/* Main Content */
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Flexbox layout for categories */
+.category-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Reduced space between columns */
+}
+#linksList {
+   
+}
+/* Individual category styling */
+.category {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.category h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Subject Layout: Image on left, Text on right */
+.subject-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 10px; /* Reduced bottom margin */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.subject-container img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
 .subject-container p {
     margin: 0;
-    padding: 10px;
-    font-size: 1rem;
-}
-
-.subject-container:hover {
-    background-color: #a1c1c1; /* Hover effect matching previous project */
-    transform: scale(1.05); /* Lichte vergroting bij hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Schaduw wordt intenser */
-}
-
-.image-container {
-    display: inline-block;
-    text-align: center;
-    margin: 0 10px;
-    width: 125px;
-}
-
-.image-container img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.image-container p {
-    margin-top: 5px;
-    margin-bottom: 0;
-    font-size: 1rem;
-}
-
-.arrow {
-    background-color: #007bff; /* Match met vorige project */
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
     font-size: 18px;
+    color: #333;
+}
+.subject-container:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
 }
 
-.arrow:hover {
-    background-color: #0056b3;
-    transform: scale(1.1); /* Kleine vergroting bij hover */
-}
-
-.footer-content {
-    background-color: #d1e0e0; /* Match met vorige project */
-    padding: 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Schaduw aan de bovenkant */
-}
-
-.footer-links a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #007bff;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
+/* Modal Styling */
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 .modal-content {
-    background-color: #d1e0e0; /* Match met vorige project */
-    margin: 10% auto; /* Centered with margin from top */
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc; /* Match with previous project */
+    background-color: #ffffff;
+    padding: 30px; /* Adjusted padding */
+    border-radius: 16px;
+    max-width: 500px;
     width: 80%;
-    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
 }
 
-.modal h2 {
-    font-size: 1.5rem;
-    color: black; /* Title color matching theme */
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.modal ul {
-    list-style: none;
-    padding: 0;
-}
-
-.admin-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #007bff; /* Knop kleur */
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.admin-button:hover {
-    background-color: #0056b3; /* Hover kleur */
-}
-
-.modal li {
-    margin-bottom: 10px;
-}
-
-.modal a {
-    text-decoration: none;
-    color: #007bff; /* Match met vorige project */
-    font-size: 1.1rem;
-}
-
-.modal a:hover {
-    text-decoration: underline;
-}
-
+/* Close button for Modal */
 .close {
-    color: black; /* Close button color matching theme */
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 24px;
-    font-weight: bold;
     cursor: pointer;
+    color: #e74c3c;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
+/* Button inside the modal */
+.ga-door-button {
+    background-color: #8F88FD;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.ga-door-button:hover {
+    background-color: #6b5eea;
+    transform: translateY(-3px);
 }
 
-/* Responsive Styles */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    header .header-content {
-        flex-direction: column;
-        align-items: flex-start;
+    main {
+        padding: 20px;
     }
-
-    header .header-content h1 {
-        font-size: 1.2rem;
-    }
-
-    header .header-content input[type="search"] {
-        width: 80%;
-    }
-
-    header .header-content .language-buttons {
-        margin-top: 10px;
-    }
-
-    .slideshow-container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .image-container {
-        width: 100px;
-    }
-
     .modal-content {
+        padding: 20px;
         width: 90%;
-        margin: 5% auto;
-    }
-
-    .modal h2 {
-        font-size: 1.2rem;
-    }
-
-    .buttons {
-        position: static;
-        margin-top: 20px;
-    }
-
-    .buttons button {
-        display: block;
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 0.9rem;
     }
 }
-
-@media (max-width: 480px) {
-    header .header-content input[type="search"] {
-        width: 100%;
-    }
-
-    .image-container {
-        width: 80px;
-    }
-
+@media (max-width: 468px) {
     .modal-content {
-        width: 95%;
-        max-width: none;
+        padding: 15px;
+        width: 90%;
     }
-
-    .modal h2 {
-        font-size: 1rem;
+    .close {
+        font-size: 20px;
+    }
+    .ga-door-button {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
