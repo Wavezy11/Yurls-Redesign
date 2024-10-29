@@ -170,6 +170,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "VR - Immerse (EN) ", url: "https://www.meta.com/nl-nl/experiences/immerse-live-language-classes-ai-conversation-practice/3181432891940455/"},
                 {text: "VR - ImmerseMe (EN) - beperkte trial ", url: "https://immerseme.co/#home"},
                 {text: "VR - Language Lab (Nederlands, Engels, Spaans, Arabisch, Chinees, Frans, Duits, Hebreeuws, Italiaans, Japans, Koreaans, Portugees, Russisch en Oekraïens. ", url: "https://www.oculus.com/experiences/quest/3802077353226534/?ranking_trace=654641448482276_3802077353226534_SKYLINEWEB_09a04360-b332-4d20-be70-391e17dbc230"},
+
+
+
+
+
                 {text: "VR - Mondly VR (Nederlands, Engels, Spaans, Duits, Frans, Italiaans, Portugees, Russisch, Japans, Chinees en nog veel meer.) ", url: "https://www.mondly.com/vr"},
                 {text: "VR - Terra Alia (Chinees, Duits, Engels, Frans, Italiaans, Japans, Koreaans, Portugees, Russisch, Spaans) ", url: "https://www.meta.com/nl-nl/experiences/terra-alia-a-multilingual-adventure/7146257325418969/"},
                 {text: "VR / Game-based-learning - Keep Talking and Nobody Explodes (NL, EN) ", url: "https://www.meta.com/nl-nl/experiences/terra-alia-a-multilingual-adventure/7146257325418969/"}
@@ -181,14 +186,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 {text: "VR - Short Circuit VR [elektronische circuits] (EN) ", url: "https://store.steampowered.com/app/970800/Short_Circuit_VR/"},
                 {text: "VR - Training Elektrisch hoogspanningsstation (EN) ", url: "https://www.oculus.com/experiences/quest/3522494514525780/?utm_source=sidequest"},
                 {text: "VR - Training Transformator oliemonsters (EN)", url: "https://www.oculus.com/experiences/quest/3522494514525780/?utm_source=sidequest"},
+
                 {text: "VR - Training Veiligheid en gezondheid op het werk voor elektriciens (EN) ", url: "https://www.oculus.com/experiences/quest/3522494514525780/?utm_source=sidequest"},
                 {text: "VR/MR - Arkio (EN) [Achitecteur] ", url: "https://www.meta.com/nl-nl/experiences/arkio/2280319701979278/"},
                 {text: "PCVR - Wrench [automonteur-simulator] (EN) ", url: "https://store.steampowered.com/app/936720/Wrench/"},
                 {text: "VR - Builder Simulator [Huis bouwen] (EN) ", url: "https://store.steampowered.com/app/2270940/Builder_Simulator_VR/"},
+
                 {text: "VR - Car Mechanic Simulator (EN) ", url: "https://www.oculus.com/experiences/quest/4178846312215481/"},
                 {text: "VR - Graafmachine VR (EN) ", url: "https://www.meta.com/nl-nl/experiences/6128709557192619/"},
                 {text: "VR - Home Improvisation [meubelbouw] (EN) - HTC Vive ", url: "https://store.steampowered.com/app/357670/Home_Improvisation_Furniture_Sandbox/"},
                 {text: "VR - Kitchen Assembly (EN) ", url: "https://www.meta.com/nl-nl/experiences/8235337643173443/"},
+                
                 {text: "VR - vrkshop [houtbewerking] (EN) ", url: "https://store.steampowered.com/app/1344530/vrkshop/"}
              
             ],
