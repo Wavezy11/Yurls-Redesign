@@ -161,11 +161,11 @@ $conn->close();
 
     <main>
         <form method="POST" action="">
-            <input type="text" name="username" required placeholder="Username" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
-            <input type="password" name="password" required placeholder="Password">
+            <input type="text" name="username" required placeholder="Gebruikersnaam" value="<?php echo isset($_POST['username']) ? htmlspecialchars($_POST['username']) : ''; ?>">
+            <input type="password" name="password" required placeholder="Wachtwoord">
             <button type="submit">Login</button>
         </form>
-        <p id="register">Don't have an account? <a href="register.php">Register</a></p>
+        <p id="register">Geen account? <a href="register.php">Register</a></p>
         
         <!-- Display error message if login fails -->
         <?php if ($error_msg): ?>
