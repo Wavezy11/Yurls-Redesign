@@ -4,8 +4,6 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-
-
 require '../../vendor/autoload.php'; // Zorg ervoor dat je de juiste pad hebt naar autoload.php van Composer
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
@@ -15,32 +13,32 @@ $username = $_ENV['DB_USER'];
 $password = $_ENV['DB_PASS'];
 $dbname = $_ENV['DB_NAME'];
 
-$host = $_ENV['HOST'];
-$email = $_ENV['EMAIL'];
-$emailpassword = $_ENV['EMAIL_PASSWORD'];
-$port = $_ENV['host'];
+// $host = $_ENV['HOST'];
+// $email = $_ENV['EMAIL'];
+// $wachtwoord = $_ENV['WACHTWOORD'];
+// $port = $_ENV['PORT'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
     
-    $mail = new PHPMailer(true); // Instantie van PHPMailer maken
+    $mail = new PHPMailer(true); 
 
     try {
-        // Serverinstellingen
+
         $mail->isSMTP();
-        $mail->Host       = $host; // Outlook SMTP-server
+        $mail->Host       = 'smtp.office365.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = $email; // Je e-mail
-        $mail->Password   = $emailpassword; // App-specifiek wachtwoord
+        $mail->Username   = 'WavezzIWNL@outlook.com'; 
+        $mail->Password   = 'Teringlijer013'; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = $host;
+        $mail->Port       = 587;
 
         // Ontvanger
         $mail->setFrom($email, 'PIT');
-        $mail->addAddress($email); // Ontvanger van de e-mail
-        $mail->addAddress($email, 'PIT'); // Voeg je eigen e-mail toe als ontvanger
+        $mail->addAddress($email); 
+        $mail->addAddress($email, 'PIT');
 
         // Content
         $mail->isHTML(true);
@@ -81,13 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </body>
         </html>';
 
+        // Verzend e-mail
         $mail->send();
         echo '<div class="notification success">Het bericht is succesvol verzonden!</div>';
     } catch (Exception $e) {
         echo '<div class="notification error">Het bericht kon niet worden verzonden. Mailer Error: ' . $mail->ErrorInfo . '</div>';
     }
 } else {
-    // Toon het formulier als er geen POST-aanroep is
+     
     ?>
     <!DOCTYPE html>
     <html lang="nl">
@@ -97,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Contact</title>
         <link rel="stylesheet" href="../css/contact.css">
         <style>
-            /* CSS voor animatie en notificatie */
+           
             .notification {
                 position: absolute;
                 top: 20px;
@@ -155,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </main>
         <footer class="footer-content">
-            <p>&copy; 2024 Mijn Bedrijf</p>
+            <p>&copy; 2024 PIT</p>
         </footer>
         <script>
             // Laat de notificatie zien als er een succesvol bericht of een fout is

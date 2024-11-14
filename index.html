@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIT</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        a {
+            text-decoration: none;
+        }
+        </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <img src="img/logo-yonder.png" alt="logo" class="logo">
+        <input type="search" id="searchInput" oninput="filterImages()" placeholder="Zoeken">
+    </div>
+</header>
+    <main>
+        <div id="categoryContainer"></div>
+
+        <!-- <div class="category-container">
+            <section class="category">
+                <h2>School</h2>
+                <div class="subject-container" data-subject="Biologie">
+                    <img src="img/biologie.png" alt="icon">
+                    <p>Biologie</p>
+                </div>
+                <div class="subject-container" data-subject="CKV">
+                    <img src="img/CKV.png" alt="icon">
+                    <p>CKV</p>
+                </div>
+                <div class="subject-container" data-subject="GYM">
+                    <img src="img/gym.png" alt="icon">
+                    <p>GYM</p>
+                </div>
+                <div class="subject-container" data-subject="Economie">
+                    <img src="img/economie.png" alt="icon">
+                    <p>Economie</p>
+                </div>
+                <div class="subject-container" data-subject="Mens & Maatschappij">
+                    <img src="img/mm.png" alt="icon">
+                    <p>Mens & Maatschappij</p>
+                </div>
+                <div class="subject-container" data-subject="Scheikunde">
+                    <img src="img/scheikunde.png" alt="icon">
+                    <p>Scheikunde</p>
+                </div>
+                <div class="subject-container" data-subject="Talen">
+                    <img src="img/Talen.png" alt="icon">
+                    <p>Talen</p>
+                </div>
+                <div class="subject-container" data-subject="Techniek">
+                    <img src="img/techniek.png" alt="icon">
+                    <p>Techniek</p>
+                </div>
+            </section>
+         
+            <section class="category">
+                <h2>ICT</h2>
+                <div class="subject-container" data-subject="Softskills">
+                    <img src="img/Skills.png" alt="icon">
+                    <p>Softskills</p>
+                </div>
+                <div class="subject-container" data-subject="Kennismaking VR">
+                    <img src="img/Kennismaking VR.png" alt="icon">
+                    <p>Kennismaking VR</p>
+                </div>
+                <div class="subject-container" data-subject="Gamefication">
+                    <img src="img/Gamefication.png" alt="icon">
+                    <p>Gamefication</p>
+                </div>
+                <div class="subject-container" data-subject="ICT">
+                    <img src="img/ICT.png" alt="icon">
+                    <p>ICT</p>
+                </div>
+                <div class="subject-container" data-subject="Digitale Geleerdheid">
+                    <img src="img/Digitale Geleerdheid.png" alt="icon">
+                    <p>Digitale Geleerdheid</p>
+                </div>
+                <div class="subject-container" data-subject="Verschil AR, VR, MR">
+                    <img src="img/Verschil .png" alt="icon">
+                    <p>Verschil AR, VR, MR</p>
+                </div>
+            </section>
+        
+            <section class="category">
+                <h2>Overig</h2>
+                <div class="subject-container" data-subject="Meerdere vakken">
+                    <img src="img/Group 65.png" alt="icon">
+                    <p>Meerdere vakken</p>
+                </div>
+                <div class="subject-container" data-subject="Verzorging">
+                    <img src="img/Group 57.png" alt="icon">
+                    <p>Verzorging</p>
+                </div>
+                <div class="subject-container" data-subject="Horeca">
+                    <img src="img/Group 58.png" alt="icon">
+                    <p>Horeca</p>
+                </div>
+                <div class="subject-container" data-subject="Beroepsgericht">
+                    <img src="img/Group 58.png" alt="icon">
+                    <p>Beroepsgericht</p>
+                </div>
+                <div class="subject-container" data-subject="Muziek">
+                    <img src="img/Group 59.png" alt="icon">
+                    <p>Muziek</p>
+                </div>
+                <div class="subject-container" data-subject="Cursessen">
+                    <img src="img/Group 60.png" alt="icon">
+                    <p>Cursessen</p>
+                </div>
+                <div class="subject-container" data-subject="Spelgebasseerd Leren">
+                    <img src="img/Group 60.png" alt="icon">
+                    <p>Spelgebasseerd Leren</p>
+                </div>
+                <div class="subject-container" data-subject="Leuke GYM">
+                    <img src="img/gym.png" alt="icon">
+                    <p>Leuke GYM</p>
+                </div>
+            </section>
+        </div> -->
+    </main>
+    <footer>
+        <div class="footer-content">
+
+        <a href="login.php">
+            <p>&copy; 2024 Yonder. All rights reserved.</p>
+        </a>
+            <ul class="footer-links">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Links for <span id="selectedSubject"></span></h2>
+            <ul id="linksList">
+                <!-- Links worden hier getoond -->
+            </ul>
+            <p id="prijs"></p> <!-- Prijs wordt hier weergegeven -->
+            <p id="taal"></p> <!-- Taal wordt hier weergegeven -->
+            
+            <!-- Platform in één div -->
+            <div id="platformDiv">
+                <p id="platform"></p> <!-- Platform wordt hier weergegeven -->
+            </div>
+    
+            <button id="gaDoorButton" class="ga-door-button">Doorgaan</button>
+        </div>
+    </div>
+    
+    <script>
+        // Laad de JSON-gegevens via een fetch-aanroep
+
+        // fix taal, platform en prijs tonen en zorg dat die niet undefined is
+        fetch('json/data.json')
+            .then(response => response.json())
+            .then(data => {
+                const categoryContainer = document.getElementById('categoryContainer');
+                const subjects = {};
+    
+                // Groepeer onderwerpen per categorie en vak
+                data.forEach(item => {
+                    if (!subjects[item.categorie]) {
+                        subjects[item.categorie] = {};
+                    }
+                    if (!subjects[item.categorie][item.vak]) {
+                        subjects[item.categorie][item.vak] = [];
+                    }
+    
+                    // Voeg onderwerp en URL toe aan het vak
+                    subjects[item.categorie][item.vak].push({
+                        onderwerp: item.onderwerp,
+                        url: item.url
+                    });
+                });
+
+                function filterImages() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const subjectContainers = document.querySelectorAll('.subject-container');
+    
+    subjectContainers.forEach(container => {
+        const subjectText = container.querySelector('p').innerText.toLowerCase();
+        if (subjectText.includes(searchInput)) {
+            container.style.display = '';  // Toon het vak
+        } else {
+            container.style.display = 'none';  // Verberg het vak
+        }
+    });
+}
+
+
+    
+                // Maak de HTML-elementen dynamisch aan voor elke categorie en vak
+                for (const category in subjects) {
+                    const section = document.createElement('section');
+                    section.classList.add('category');
+                    const categoryTitle = document.createElement('h2');
+                    categoryTitle.innerText = category;
+                    section.appendChild(categoryTitle);
+    
+                    // Iconen voor de vakken per categorie
+                    const iconMapping = {
+                        "Biologie": "img/biologie.png",
+                        "CKV": "img/CKV.png",
+                        "GYM": "img/gym.png",
+                        "Economie": "img/economie.png",
+                        "Mens & Maatschappij": "img/mm.png",
+                        "Scheikunde": "img/scheikunde.png",
+                        "Talen": "img/Talen.png",
+                        "Techniek": "img/techniek.png",
+                        "Softskills": "img/Skills.png",
+                        "Kennismaking VR": "img/Kennismaking VR.png",
+                        "Gamefication": "img/Gamefication.png",
+                        "ICT": "img/ICT.png",
+                        "Website Iconen": "img/websiteiconen.png",
+                        "Verschil AR, VR, MR": "img/Verschil.png",
+                        "Digitale Geleerdheid": "img/Digitale Geleerdheid.png",
+                        "Verschil AR, VR, MR": "img/Verschil.png",
+                        "Meerdere vakken": "img/Group 65.png",
+                        "Verzorging": "img/Group 57.png",
+                        "Horeca": "img/Group 58.png",
+                        "Beroepsgericht": "img/Group 58.png",
+                        "Muziek": "img/Group 59.png",
+                        "Cursessen": "img/Group 60.png",
+                        "Spelgebasseerd Leren": "img/Group 60.png",
+                        "Leuke GYM": "img/gym.png"
+                    };
+    
+                    // Itereer door de vakken in de categorie
+                    for (const vak in subjects[category]) {
+                        const subjectContainer = document.createElement('div');
+                        subjectContainer.classList.add('subject-container');
+                        subjectContainer.setAttribute('data-subject', vak);
+    
+                        const img = document.createElement('img');
+                        img.src = iconMapping[vak] || 'img/default-icon.png';  // Zorg ervoor dat er een standaardpictogram is voor onbekende vakken
+                        img.alt = vak + ' icon';
+    
+                        const p = document.createElement('p');
+                        p.innerText = vak;
+    
+                        subjectContainer.appendChild(img);
+                        subjectContainer.appendChild(p);
+    
+                        // Voeg een event listener toe voor het openen van de popup
+                        subjectContainer.addEventListener('click', function() {
+                            openModal(vak, subjects[category][vak]);
+                        });
+    
+                        section.appendChild(subjectContainer);
+                    }
+    
+                    categoryContainer.appendChild(section);
+                }
+            })
+            .catch(error => {
+                console.error('Error loading JSON:', error);
+            });
+    
+
+
+        // Functie om het modaal venster te openen
+    // Functie om het modaal venster te openen
+    function openModal(vak, onderwerpen) {
+    const modal = document.getElementById('popupModal');
+    const selectedSubject = document.getElementById('selectedSubject');
+    const linksList = document.getElementById('linksList');
+    const prijsElement = document.getElementById('prijs');
+    const taalElement = document.getElementById('taal');
+    const platformElement = document.getElementById('platform');
+    
+    selectedSubject.innerText = vak;
+    linksList.innerHTML = '';  // Maak de lijst leeg voordat je nieuwe links toevoegt
+    prijsElement.innerHTML = ''; // Maak de prijs sectie leeg
+    taalElement.innerHTML = ''; // Maak de taal sectie leeg
+    platformElement.innerHTML = ''; // Maak de platform sectie leeg
+
+    
+    // Voeg een link toe voor elk onderwerp
+    onderwerpen.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `<a href="${item.url}" target="_blank">${item.onderwerp}</a>`;
+        linksList.appendChild(listItem);
+
+        // Vul de prijs, taal en platform gegevens in de popup
+        const prijsPara = document.createElement('p');
+        prijsPara.innerText = `Prijs: ${item.prijs}`;
+        prijsElement.appendChild(prijsPara);
+
+        const taalPara = document.createElement('p');
+        taalPara.innerText = `Taal: ${item.Taal}`;
+        taalElement.appendChild(taalPara);
+
+        const platformPara = document.createElement('p');
+        platformPara.innerText = `Platform: ${item.Platform}`;
+        platformElement.appendChild(platformPara);
+    });
+    
+    modal.style.display = 'flex';  // Toont het modal venster
+    
+    // Smooth scroll naar het modaal venster
+    modal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+console.log("Prijs:", linkData.prijs);
+console.log("Taal:", linkData.Taal);
+console.log("Platform:", linkData.Platform);
+
+        // Functie om het modaal venster te sluiten
+// Sluit het modale venster als de sluitknop wordt geklikt
+const closeButton = document.querySelector('.close');
+closeButton.addEventListener('click', closeModal);
+
+function closeModal() {
+    const modal = document.getElementById('popupModal');
+    modal.style.display = 'none';
+}
+
+// Toevoegen van een event listener voor de doorgaan knop
+document.getElementById('gaDoorButton').addEventListener('click', function() {
+    // Sluit de modal door de display te veranderen naar 'none'
+    const modal = document.getElementById('popupModal');
+    modal.style.display = 'none';
+
+    // Of je kunt naar een andere pagina doorsturen, bijvoorbeeld:
+    // window.location.href = 'doorgaanPagina.html'; // Vervang dit met de juiste URL.
+});
+
+// Event listener voor de sluitknop van de modal
+document.querySelector('.close').addEventListener('click', function() {
+    const modal = document.getElementById('popupModal');
+    modal.style.display = 'none';
+});
+
+
+    </script>
+        
+
+</body>
+</html>
+
