@@ -18,8 +18,8 @@ if ($conn->connect_error) {
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email']; // Get email from the login form
-    $password_input = $_POST['password']; // Get password from the login form
-    // Prepare the SQL statement to prevent SQL injection
+    $password_input = $_POST['password']; 
+  
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
